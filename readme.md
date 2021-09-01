@@ -60,7 +60,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 **Je focus:** Beide, in eerste instantie Surface.
 
-**Je opdracht:** Zelf ontworpen notitie app
+**Je opdracht:** Zelf ontworpen notitie app. Hierbij wil ik dat de gebruiker notities, to-do lijsten kan toevoegen. Ook wil ik dat de gebruiker notities kan bookmarken/highlighten en kan verwijderen. Met dit project wil ik graag leren hoe ik door de gebruiker gecreëerde elementen kan opslaan zodat hij/zij deze later kan terug zien.
 
 **Screenshot(s):**
 
