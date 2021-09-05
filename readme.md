@@ -60,12 +60,13 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 **Je focus:** Beide, in eerste instantie Surface.
 
-**Je opdracht:** Zelf ontworpen notitie app. Hierbij wil ik dat de gebruiker notities, to-do lijsten kan toevoegen. Ook wil ik dat de gebruiker notities kan bookmarken/highlighten en kan verwijderen. Met dit project wil ik graag leren hoe ik door de gebruiker gecreëerde elementen kan opslaan zodat hij/zij deze later kan terug zien.
-
+**Je opdracht:** Zelf ontworpen weather app. Hierin wil ik de locatie en tijd kunnen ophalen van de gebruiker. De weersvoorspelling kan ik waarschijnlijk niet accuraat tonen maar om het wat leven te geven wil ik wel proberen de temperaturen random aan te passen elke keer dat de gebruiker de pagina opent. Ik wil een dark/light mode toevoegen en mirco interacties implimenteren door Lottie.js en After Effects the gebruiken.
 **Screenshot(s):**
 
 ![screenshot(s) die een goed beeld geven van de website die je gaat maken](images/reference.jpg)
 
 **Breakdown-schets(en):**
 
-![-voorlopige breakdownschets(en) van een of beide pagina's van de site die je gaat maken-](images/sketches-design.jpg)
+![-voorlopige breakdownschets(en) van een of beide pagina's van de site die je gaat maken-](images/sketches-weatherApp-1.jpg)
+
+![-voorlopige breakdownschets(en) van een of beide pagina's van de site die je gaat maken-](images/sketches-weatherApp-2.jpg)
