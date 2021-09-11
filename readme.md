@@ -12,6 +12,28 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 
 
+## Intake (week 1)
+
+**Je startniveau:** Zwarte piste
+
+**Je focus:** Beide, in eerste instantie Surface.
+
+**Je opdracht:** Nabouwen Weather app van android MIUI
+
+**Screenshot(s):**
+
+![screenshot(s) die een goed beeld geven van de website die je gaat maken](images/app-screenshot.png)
+
+**Breakdown-schets(en):**
+
+![-voorlopige breakdownschets(en) van een of beide pagina's van de site die je gaat maken-](images/breakdown-sketches.png)
+
+
+
+
+
+
+
 ## Eindgesprek (week 7/8)
 
 -dit ging goed & dit was lastig-
@@ -53,20 +75,3 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 -na afloop snel uitkomsten vastleggen-
 
 
-
-## Intake (week 1)
-
-**Je startniveau:** Zwarte piste
-
-**Je focus:** Beide, in eerste instantie Surface.
-
-**Je opdracht:** Zelf ontworpen weather app. Hierin wil ik de locatie en tijd kunnen ophalen van de gebruiker. De weersvoorspelling kan ik waarschijnlijk niet accuraat tonen maar om het wat leven te geven wil ik wel proberen de temperaturen random aan te passen elke keer dat de gebruiker de pagina opent. Ik wil een dark/light mode toevoegen en mirco interacties implimenteren door Lottie.js en After Effects the gebruiken.
-**Screenshot(s):**
-
-![screenshot(s) die een goed beeld geven van de website die je gaat maken](images/reference.jpg)
-
-**Breakdown-schets(en):**
-
-![-voorlopige breakdownschets(en) van een of beide pagina's van de site die je gaat maken-](images/sketches-weatherApp-1.jpg)
-
-![-voorlopige breakdownschets(en) van een of beide pagina's van de site die je gaat maken-](images/sketches-weatherApp-2.jpg)
