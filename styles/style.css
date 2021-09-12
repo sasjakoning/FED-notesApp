@@ -6,6 +6,7 @@
 
 :root {
   --text-color: #FFFF;
+  --transparent-text: rgba(255, 255, 255, 0.6);
 
   --weather-clear: #3C82D7;
 
@@ -103,6 +104,7 @@ header > nav > ul > li:nth-of-type(3) a::after{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 6em;
 }
 
 .temperature > h1{
@@ -269,3 +271,50 @@ header > nav > ul > li:nth-of-type(3) a::after{
 
 /* --- */
 
+/* hourly forecast */
+
+.mainContent__hourly > ul {
+  display: flex;
+  list-style-type: none;
+  overflow: scroll;
+  padding: 0;
+}
+
+.mainContent__hourly > ul > li {
+  margin: 0 1em;
+} 
+
+.mainContent__hourly > ul > li > p {
+  margin: 0;
+  line-height: 1.3em;
+}
+
+.mainContent__hourly > ul > li > p:first-of-type {
+  color: var(--transparent-text);
+  font-size: .8em;
+}
+
+.mainContent__hourly > ul > li > p:nth-of-type(3) {
+  color: var(--transparent-text);
+  font-size: .6em;
+  position: relative;
+  padding-left: 1.3em;
+}
+
+.mainContent__hourly > ul > li > p:nth-of-type(3)::before {
+  content: "";
+  position: absolute;
+  background: var(--cloud-white);
+  width: 10px;
+  height: 10px;
+  left: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+/* scrollbar hide: https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll */
+
+/* --- */
