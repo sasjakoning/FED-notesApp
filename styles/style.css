@@ -98,14 +98,14 @@ header > nav > ul > li:nth-of-type(3) a::after{
 
 /* temperature, cloudiness, AQI */
 
-main > section:nth-of-type(1) {
+.temperature {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-main > section:nth-of-type(1) > h1{
+.temperature > h1{
   font-size: 8em;
   font-weight: 100;
   margin: 1em 0 0 0;
@@ -114,7 +114,7 @@ main > section:nth-of-type(1) > h1{
 
 /* celcius icon */
 
-main > section:nth-of-type(1) > h1::after{
+.temperature > h1::after{
   content: "";
   position: absolute;
   top: 25px;
@@ -125,7 +125,7 @@ main > section:nth-of-type(1) > h1::after{
   border: 3px solid var(--text-color);
 }
 
-main > section:nth-of-type(1) > h1::before{
+.temperature > h1::before{
   content: "C";
   position: absolute;
   top: 25px;
@@ -134,12 +134,12 @@ main > section:nth-of-type(1) > h1::before{
   right: -27px;
 }
 
-main > section:nth-of-type(1) > p {
+.temperature > p {
   font-size: 1.2em;
   margin: 0;
 }
 
-main > section:nth-of-type(1) > a {
+.temperature > a {
   text-decoration: none;
   color: var(--text-color);
   font-size: 0.8em;
@@ -150,7 +150,7 @@ main > section:nth-of-type(1) > a {
   position: relative;
 }
 
-main > section:nth-of-type(1) > a::before {
+.temperature > a::before {
   content: "";
   background: var(--cloud-white);
   position: absolute;
