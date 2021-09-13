@@ -44,3 +44,16 @@ console.log(randomElement)
     //     animation.playSegments([40, 1], true);
     //     state = "fave"
     // }
+
+    
+
+    // random wind speed direction
+
+    const rotation = document.querySelectorAll(".mainContent__hourly__windSpeed > img ")
+
+    rotation.forEach(element => {
+        element.style.setProperty("--randomRotation", Math.floor(Math.random() * 360) + "deg")
+    });
+
+    // random numbers: https://css-tricks.com/random-numbers-css/
+

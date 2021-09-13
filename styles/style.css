@@ -13,6 +13,8 @@
   --sun-yellow: #FFDD00;
   --cloud-white: #FFFF;
   --transparent-white: rgba(255, 255, 255, 0.3);
+
+  --randomRotation: 30deg;
 }
 
 body{
@@ -304,10 +306,28 @@ header > nav > ul > li:nth-of-type(3) a::after{
 .mainContent__hourly > ul > li > p:nth-of-type(3)::before {
   content: "";
   position: absolute;
-  background: var(--cloud-white);
+  background: url(../images/wind-arrow.svg);
+  background-repeat: no-repeat;
+  transform: var(--randomRotation);
   width: 10px;
   height: 10px;
   left: 0;
+}
+
+.mainContent__hourly__windSpeed {
+  display: flex;
+}
+
+.mainContent__hourly__windSpeed > img {
+  width: .7em;
+  height: .7em;
+  transform: rotate(var(--randomRotation));
+}
+
+.mainContent__hourly__windSpeed p {
+  margin: 0 0 0 .5em;
+  font-size: .6em;
+  color: var(--transparent-text);
 }
 
 .mainContent__hourly > ul > li > img {
