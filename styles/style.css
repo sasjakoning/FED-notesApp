@@ -50,16 +50,16 @@ header > nav > ul {
 header > nav > ul > li:nth-of-type(1) a::before{
   content: "";
   background: var(--cloud-white);
-  width: 2px;
-  height: 15px;
+  width: .2em;
+  height: 1em;
   position: absolute;
 }
 
 header > nav > ul > li:nth-of-type(1) a::after{
   content: "";
   background: var(--cloud-white);
-  width: 2px;
-  height: 15px;
+  width: .2em;
+  height: 1em;
   position: absolute;
   transform: rotate(90deg);
 }
@@ -70,8 +70,8 @@ header > nav > ul > li:nth-of-type(1) a::after{
 
 header > nav > ul > li:nth-of-type(3) a{
   background: var(--cloud-white);
-  width: 3px;
-  height: 3px;
+  width: 0.17em;
+  height: 0.17em;
   border-radius: 50%;
   position: relative;
   display: flex;
@@ -80,21 +80,21 @@ header > nav > ul > li:nth-of-type(3) a{
 header > nav > ul > li:nth-of-type(3) a::before{
   content: "";
   background: var(--cloud-white);
-  width: 3px;
-  height: 3px;
+  width: 0.17em;
+  height: 0.17em;
   border-radius: 50%;
   position: absolute;
-  top:15px;
+  top:1em;
 }
 
 header > nav > ul > li:nth-of-type(3) a::after{
   content: "";
   background: var(--cloud-white);
-  width: 3px;
-  height: 3px;
+  width: 0.17em;
+  height: 0.17em;
   border-radius: 50%;
   position: absolute;
-  top: 7px;
+  top: .5em;
 }
 
 /* --- */
@@ -121,10 +121,10 @@ header > nav > ul > li:nth-of-type(3) a::after{
 .temperature > h1::after{
   content: "";
   position: absolute;
-  top: 25px;
+  top: .2em;
 
-  width: 10px;
-  height: 10px;
+  width: .08em;
+  height: .08em;
   border-radius: 50%;
   border: 3px solid var(--text-color);
 }
@@ -132,10 +132,10 @@ header > nav > ul > li:nth-of-type(3) a::after{
 .temperature > h1::before{
   content: "C";
   position: absolute;
-  top: 25px;
-  font-size: 20px;
+  top: 1.2em;
+  font-size: .15em;
   font-weight: 700;
-  right: -27px;
+  right: -1.4em;
 }
 
 .temperature > p {
@@ -150,7 +150,7 @@ header > nav > ul > li:nth-of-type(3) a::after{
   margin-top: 1em;
   background: var(--transparent-white);
   padding: 0.5em 1em 0.5em 2em;
-  border-radius: 500px;
+  border-radius: 5em;
   position: relative;
 }
 
@@ -158,9 +158,9 @@ header > nav > ul > li:nth-of-type(3) a::after{
   content: "";
   background: var(--cloud-white);
   position: absolute;
-  width: 10px;
-  height: 10px;
-  left: 7px;
+  width: .8em;
+  height: .8em;
+  left: .7em;
 }
 
 /* --- */
@@ -190,8 +190,8 @@ header > nav > ul > li:nth-of-type(3) a::after{
 .mainContent__forecast > a:nth-of-type(1)::after {
   content: "";
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: .7em;
+  height: .7em;
   transform: rotate(45deg);
   right: 0;
   top: .2em;
@@ -225,8 +225,8 @@ header > nav > ul > li:nth-of-type(3) a::after{
   position: absolute;
   background: var(--cloud-white);
 
-  width: 10px;
-  height: 10px;
+  width: .7em;
+  height: .7em;
   top: 50%;
   bottom: 50%;
   transform: translate(-50%, -50%);
@@ -238,8 +238,8 @@ header > nav > ul > li:nth-of-type(3) a::after{
   position: absolute;
   background: var(--cloud-white);
 
-  width: 10px;
-  height: 10px;
+  width: .7em;
+  height: .7em;
   top: 50%;
   bottom: 50%;
   transform: translate(-50%, -50%);
@@ -251,8 +251,8 @@ header > nav > ul > li:nth-of-type(3) a::after{
   position: absolute;
   background: var(--cloud-white);
 
-  width: 10px;
-  height: 10px;
+  width: .7em;
+  height: .7em;
   top: 50%;
   bottom: 50%;
   transform: translate(-50%, -50%);
@@ -266,7 +266,7 @@ header > nav > ul > li:nth-of-type(3) a::after{
   display: block;
   width: 100%;
   padding: .8em 0;
-  border-radius: 1000px;
+  border-radius: 5em;
 
   margin-top: 1em;
 }
@@ -303,16 +303,6 @@ header > nav > ul > li:nth-of-type(3) a::after{
   padding-left: 1.3em;
 }
 
-.mainContent__hourly > ul > li > p:nth-of-type(3)::before {
-  content: "";
-  position: absolute;
-  background: url(../images/wind-arrow.svg);
-  background-repeat: no-repeat;
-  transform: var(--randomRotation);
-  width: 10px;
-  height: 10px;
-  left: 0;
-}
 
 .mainContent__hourly__windSpeed {
   display: flex;
@@ -420,10 +410,10 @@ header > nav > ul > li:nth-of-type(3) a::after{
   content: "";
   position: absolute;
   background: var(--cloud-white);
-  width: 10px;
-  height: 10px;
+  width: .7em;
+  height: .7em;
   left: 0;
-  top: -2px;
+  top: -.2em;
 }
 
 .mainContent__aqi > ul > li:nth-of-type(2) {
@@ -441,10 +431,10 @@ header > nav > ul > li:nth-of-type(3) a::after{
 .mainContent__aqi > ul > li:nth-of-type(2) > a::after {
   content: "";
   position: absolute;
-  width: 8px;
-  height: 8px;
-  top: 3px;
-  right: 2px;
+  width: .7em;
+  height: .7em;
+  top: .2em;
+  right: .2em;
   transform: rotate(45deg);
   border-top: 1px solid var(--cloud-white);
   border-right: 1px solid var(--cloud-white);
@@ -479,8 +469,8 @@ footer > a::before {
   content: "";
   background: var(--cloud-white);
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: .7em;
+  height: .7em;
   left: .2em;
 }
 
