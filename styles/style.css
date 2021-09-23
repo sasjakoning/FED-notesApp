@@ -15,6 +15,7 @@
   --transparent-white: rgba(255, 255, 255, 0.3);
 
   --randomRotation: 30deg;
+
 }
 
 body{
@@ -510,3 +511,26 @@ footer > a::before {
 .st3{fill:#FFFFFF;}
 .st4{fill:#C8C6C6;}
 /* --- */
+
+/* #group-1-dot, #group-2-dot, #group-3-dot, #group-4-dot, #group-5-dot, #group-6-dot {
+
+  --translateX: 0;
+  --translateY: 0;
+
+  transform: translate(var(--translateX), var(--translateY));
+}
+
+#group-1-temp, #group-2-temp, #group-3-temp, #group-4-temp, #group-5-temp, #group-6-temp {
+
+  --translateY: 0px;
+
+  transform: translateY(var(--translateY));
+
+} */
+
+#group_1, #group_2, #group_3, #group_4, #group_5, #group_6 {
+  --translateY: 0;
+
+  transform: translateY(var(--translateY));
+}
+
