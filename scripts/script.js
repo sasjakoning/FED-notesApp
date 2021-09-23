@@ -1,32 +1,26 @@
 // JavaScript Document
 
-const container = document.querySelector(".sunAnim")
-let state = "fave"
-
+const container = document.querySelector(".sunAnim");
+let state = "fave";
 
 var animation = bodymovin.loadAnimation({
-    container: document.querySelector(".sunAnim"),
-    renderer: "svg",
-    loop: false,
-    autoplay: false,
-    easing: "ease-out",
-    path: "scripts/sunrise-down.json"
-})
+  container: document.querySelector(".sunAnim"),
+  renderer: "svg",
+  loop: false,
+  autoplay: false,
+  easing: "ease-out",
+  path: "scripts/sunrise-down.json",
+});
 
 animation.setSpeed(1.5);
 
-const segments = [40, 10, 20, 61]
+const segments = [40, 10, 20, 61];
 // const randomElement = Math.floor(Math.random() * segments.length);
 
-var randomElement = segments[Math.floor(Math.random()*segments.length)];
-setTimeout(function(){
-    animation.playSegments([1, randomElement], true)
-}, 2000)
-
-
-
-console.log(randomElement)
-
+var randomElement = segments[Math.floor(Math.random() * segments.length)];
+setTimeout(function () {
+  animation.playSegments([1, randomElement], true);
+}, 2000);
 
 // container.addEventListener("click", () => {
 
@@ -36,80 +30,91 @@ console.log(randomElement)
 
 // })
 
+// if(state === "fave") {
+//     animation.playSegments([1, 40], true);
+//     state = "unfave"
+// }else {
+//     animation.playSegments([40, 1], true);
+//     state = "fave"
+// }
 
-    // if(state === "fave") {
-    //     animation.playSegments([1, 40], true);
-    //     state = "unfave"
-    // }else {
-    //     animation.playSegments([40, 1], true);
-    //     state = "fave"
-    // }
+// random wind speed direction
 
-    
+const rotation = document.querySelectorAll(
+  ".mainContent__hourly__windSpeed > img "
+);
 
-    // random wind speed direction
+rotation.forEach((element) => {
+  element.style.setProperty(
+    "--randomRotation",
+    Math.floor(Math.random() * 360) + "deg"
+  );
+});
 
-    const rotation = document.querySelectorAll(".mainContent__hourly__windSpeed > img ")
+// random numbers: https://css-tricks.com/random-numbers-css/
 
-    rotation.forEach(element => {
-        element.style.setProperty("--randomRotation", Math.floor(Math.random() * 360) + "deg")
-    });
+const svgElement = document.querySelector(".forecast__temps");
+const svgPath = document.getElementById("path_1");
 
-    // random numbers: https://css-tricks.com/random-numbers-css/
+const svgGroup3Dot = document.getElementById("group-3-dot");
 
+console.log(svgElement, svgPath);
 
+let number = 0;
 
-    const svgElement = document.querySelector(".forecast__temps")
-    const svgPath = document.getElementById("path_1")
+// generate random temperature number
+const randomTemperature = Math.floor(Math.random() * 44);
+number = randomTemperature * 2;
+// let pathNumber = randomTemperature + 2;
 
-    const svgGroup3Dot = document.getElementById("group-3-dot")
+console.log("random temperature is", randomTemperature);
 
-    console.log(svgElement, svgPath)
+function randomlyGeneratedTemps() {
+  let textDing = document.getElementById("group-1-temp");
+  let root = document.getElementById("group_1");
+  let pathNumber = 0;
+  let plusOrMinus = "";
 
+  // if temperatuur onder 22 graden zit
+  if (randomTemperature < 22) {
+    root.style.setProperty("--translateY", "-" + number + "px");
 
-    let number = 0;
+    textDing.textContent = randomTemperature + "°";
 
-    // generate random temperature number
-    const randomTemperature = Math.floor(Math.random()*45)
+    pathNumber = randomTemperature - 22;
+    pathNumber = pathNumber * 2;
+    pathNumber = Math.abs(pathNumber - 0);
 
-    function ding2(){
-        number = randomTemperature;
+    // if temperatuur boven 22 graden zit
+  } else {
+    root.style.setProperty("--translateY", "-" + number + "px");
 
-        let textDing = document.getElementById("group-2-temp")
-        let root = document.getElementById("group_2")
+    textDing.textContent = randomTemperature + "°";
+    pathNumber = randomTemperature - 22;
+    pathNumber = pathNumber * 2;
 
-        if(randomTemperature < 18){
-            console.log("yes")
-            root.style.setProperty("--translateY","-" + number + "px")
+    plusOrMinus = "-";
+  }
 
-            textDing.textContent= number + "°";
+  // functie om het path te selecteren en de attribute te veranderen
+  function pathPoints(pointsList) {
+    let polyline = document.getElementById("path_1");
 
-        }else{
-            console.log("no")
-            let root = document.getElementById("group_2")
-            root.style.setProperty("--translateY","-" + number + "px")
+    polyline.setAttribute("points", pointsList);
+  }
 
-            textDing.textContent= number + "°";
-        }
-    }
+  console.log("number is", number, "pathnumber is", pathNumber);
 
-    ding2()
+  // de nummers zijn de cods van de path points, bepaald door de hoogte van de temperatuur
+  pathPoints(
+    "12," +
+      plusOrMinus +
+      pathNumber +
+      " 97.9,0 183.8,0  269.7,0  355.6,0  441.5,0"
+  );
+}
 
-    console.log(randomTemperature)
+randomlyGeneratedTemps();
 
-    function ding(){
-        number = 20;
-        let root = document.getElementById("group_1")
-        root.style.setProperty("--translateY", number + "px")
-
-        let textDing = document.getElementById("group-4-temp")
-
-        textDing.textContent="20" + "°";
-    }
-
-    // change css variable: https://css-tricks.com/updating-a-css-variable-with-javascript/
-
-    svgElement.addEventListener("click", function(){
-        svgPath.setAttribute("points", "12,45.7 97.9,25.7 183.8,25.7 269.7,25.7 355.6,25.7 441.5,25.7")
-        ding()
-    })
+// math.abs https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs
+// change css variable: https://css-tricks.com/updating-a-css-variable-with-javascript/

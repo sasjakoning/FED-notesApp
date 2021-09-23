@@ -498,39 +498,39 @@ footer > a::before {
 
 /* --- */
 
-.forecast__temps{
-  height: 100px;
+/* forecast svg styling */
+.forecast__temps__container{
+  height: 200px;
   width: 100%;
   background: red;
 }
 
-/* forecast svg styling */
+.forecast__temps__svg {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  background: #3C82D7;
+}
+
+#temps-group {
+  transform: translateY(50px);
+}
+
+#path_1 {
+  transform: translateY(-18px);
+}
+
 .st0{fill:none;stroke:#E2E1E0;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
 .st1{font-family:sans-serif;}
 .st2{font-size:18px;}
 .st3{fill:#FFFFFF;}
 .st4{fill:#C8C6C6;}
-/* --- */
 
-/* #group-1-dot, #group-2-dot, #group-3-dot, #group-4-dot, #group-5-dot, #group-6-dot {
-
-  --translateX: 0;
-  --translateY: 0;
-
-  transform: translate(var(--translateX), var(--translateY));
-}
-
-#group-1-temp, #group-2-temp, #group-3-temp, #group-4-temp, #group-5-temp, #group-6-temp {
-
-  --translateY: 0px;
-
-  transform: translateY(var(--translateY));
-
-} */
 
 #group_1, #group_2, #group_3, #group_4, #group_5, #group_6 {
-  --translateY: 0;
+  --translateY: 10px;
 
   transform: translateY(var(--translateY));
 }
 
+/* --- */
