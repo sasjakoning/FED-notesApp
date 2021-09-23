@@ -1,27 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5-day forecast</title>
-
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body class="forecast__page">
-    <header>
-        <nav>
-            <a href="index.hmtl"><img src="" alt="back-button"></a>
-        </nav>
-        <h1>5-day forecast</h1>
-    </header>
-    <main>
-        <svg class="forecast__temps" version="1.1" id="Laag_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Laag_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 453.7 29.5" style="enable-background:new 0 0 453.7 29.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#E2E1E0;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+	.st1{font-family:'MyriadPro-Regular';}
+	.st2{font-size:18px;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill:#C8C6C6;}
+</style>
 <g id="temps-group">
-    
-	<polyline id="path_1_" class="st0" points="12,25.7 97.9,25.7 183.8,25.7 269.7,25.7 355.6,25.7 441.5,25.7 "/>
-
+	<polyline id="path_1_" class="st0" points="12,25.7 97.9,25.7 183.8,25.7 269.7,25.7 355.6,25.7 441.5,25.7 	"/>
 	<g id="group_1">
 		<text id="group-1-temp" transform="matrix(1 0 0 1 2.288818e-05 15.0657)" class="st1 st2">40°</text>
 		<g id="group-1-dot">
@@ -84,9 +73,3 @@
 	</g>
 </g>
 </svg>
-    </main>
-
-    <script src="scripts/lottie.js"></script>
-	<script src="scripts/script.js"></script>
-</body>
-</html>

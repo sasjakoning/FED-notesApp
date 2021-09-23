@@ -496,3 +496,17 @@ footer > a::before {
 
 
 /* --- */
+
+.forecast__temps{
+  height: 100px;
+  width: 100%;
+  background: red;
+}
+
+/* forecast svg styling */
+.st0{fill:none;stroke:#E2E1E0;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+.st1{font-family:sans-serif;}
+.st2{font-size:18px;}
+.st3{fill:#FFFFFF;}
+.st4{fill:#C8C6C6;}
+/* --- */
