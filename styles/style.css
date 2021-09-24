@@ -9,9 +9,11 @@
   --transparent-text: rgba(255, 255, 255, 0.6);
 
   --weather-clear: #3C82D7;
+  --weather-clear-light: #649fe1;
 
   --sun-yellow: #FFDD00;
   --cloud-white: #FFFF;
+  --light-grey: #dbe9f8;
   --transparent-white: rgba(255, 255, 255, 0.3);
 
   --randomRotation: 30deg;
@@ -20,9 +22,10 @@
 
 body{
   background: var(--weather-clear);
+  background: linear-gradient(0deg, rgba(100,159,225,1) 0%, rgba(60,130,215,1) 100%);
   color: var(--text-color);
 
-  font-family: sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
 
   margin: 0;
   padding: 0;
@@ -112,9 +115,13 @@ header > nav > ul > li:nth-of-type(3) a::after{
 
 .temperature > h1{
   font-size: 8em;
-  font-weight: 100;
+  font-weight: 300;
   margin: 1em 0 0 0;
   position: relative;
+  background: rgb(219,233,248);
+  background: linear-gradient(0deg, rgba(219,233,248,1) 0%, rgb(255, 255, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* celcius icon */
@@ -137,6 +144,7 @@ header > nav > ul > li:nth-of-type(3) a::after{
   font-size: .15em;
   font-weight: 700;
   right: -1.4em;
+  -webkit-text-fill-color: white;
 }
 
 .temperature > p {
@@ -157,10 +165,11 @@ header > nav > ul > li:nth-of-type(3) a::after{
 
 .temperature > a::before {
   content: "";
-  background: var(--cloud-white);
+  background-image: url(../images/aqi-leaf.svg);
+  background-size: cover;
   position: absolute;
-  width: .8em;
-  height: .8em;
+  width: 1em;
+  height: 1em;
   left: .7em;
 }
 
@@ -207,21 +216,25 @@ header > nav > ul > li:nth-of-type(3) a::after{
   text-align: left;
 }
 
-.mainContent__forecast  tr > td:nth-of-type(2) {
+.mainContent__forecast  tr > td:nth-of-type(3) {
   text-align: right;
 }
 
-.mainContent__forecast tr > td {
-  position: relative;
-}
-
-.mainContent__forecast tr > td:first-of-type {
-  padding-left: 1.5em;
-}
 
 /* weather icons */
 
-.mainContent__forecast tr:nth-of-type(1) > td:first-of-type::before {
+.mainContent__forecast tr > td:first-of-type  {
+  display: grid;
+  place-items: center;
+  margin: .6em 0 .7em 0;
+}
+
+.mainContent__forecast tr > td:first-of-type > img {
+  width: 1.7em;
+  height: 1.7em;
+}
+
+/* .mainContent__forecast tr:nth-of-type(1) > td:first-of-type::before {
   content: "";
   position: absolute;
   background: var(--cloud-white);
@@ -258,7 +271,7 @@ header > nav > ul > li:nth-of-type(3) a::after{
   bottom: 50%;
   transform: translate(-50%, -50%);
   left: 0;
-}
+} */
 
 .mainContent__forecast > a:nth-of-type(2){
   color: var(--cloud-white);
@@ -349,6 +362,12 @@ header > nav > ul > li:nth-of-type(3) a::after{
   flex-wrap: wrap;
 }
 
+.mainContent__additional__sunrise > p {
+  font-size: .7em;
+  color: var(--transparent-text);
+  margin: -1.3em 1.3em 1em 1.3em;
+}
+
 .mainContent__additional > ul {
   display: flex;
   flex-wrap: wrap;
@@ -373,7 +392,7 @@ header > nav > ul > li:nth-of-type(3) a::after{
 }
 
 .sunAnim {
-  width: 100%;
+  max-width: 40em;
   height: 100%;
 }
 
@@ -395,14 +414,16 @@ header > nav > ul > li:nth-of-type(3) a::after{
   text-align: left;
 }
 
-.mainContent__aqi > ul > li:nth-of-type(1) > h2{
+.mainContent__aqi > ul > li:nth-of-type(1) > h3{
   color: var(--transparent-text);
   font-size: .8em;
+  font-weight: 100;
 }
 
 .mainContent__aqi > ul > li:nth-of-type(1) > p {
   line-height: .5em;
-  padding-left: 1em;
+  font-size: 1.2em;
+  padding-left: 1.4em;
   font-weight: 700;
   position: relative;
 }
@@ -410,11 +431,11 @@ header > nav > ul > li:nth-of-type(3) a::after{
 .mainContent__aqi > ul > li:nth-of-type(1) > p::before {
   content: "";
   position: absolute;
-  background: var(--cloud-white);
-  width: .7em;
-  height: .7em;
+  background-image: url(../images/aqi-leaf.svg);
+  width: 1.2em;
+  height: 1.2em;
   left: 0;
-  top: -.2em;
+  top: -.3em;
 }
 
 .mainContent__aqi > ul > li:nth-of-type(2) {
@@ -460,7 +481,7 @@ footer > p {
 footer > a {
   text-decoration: none;
   color: var(--cloud-white);
-  padding-left: 1em;
+  padding-left: 1.3em;
   font-size: .9em;
   font-weight: 700;
   position: relative;
@@ -468,10 +489,10 @@ footer > a {
 
 footer > a::before {
   content: "";
-  background: var(--cloud-white);
+  background-image: url(../images/accuweather-icon.svg);
   position: absolute;
-  width: .7em;
-  height: .7em;
+  width: 1em;
+  height: 1em;
   left: .2em;
 }
 
@@ -501,7 +522,7 @@ footer > a::before {
 /* forecast svg styling */
 .forecast__temps__container{
   height: 200px;
-  width: 100%;
+  width: 500px;
   background: red;
 }
 
