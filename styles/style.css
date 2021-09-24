@@ -29,6 +29,8 @@ body{
 
   margin: 0;
   padding: 0;
+
+  overflow-x: hidden;
 }
 
 main {
@@ -37,8 +39,21 @@ main {
 
 /* nav */
 
-header {
+/* header {
   margin: 0 10%;
+} */
+
+header > nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 0 10%;
+  /* background: var(--weather-clear);
+  background: linear-gradient(0deg, rgba(100,159,225,1) 0%, rgba(60,130,215,1) 100%);
+  background-size: 100% 100vh; */
+
+  z-index: 100;
 }
 
 header > nav > ul {
@@ -100,6 +115,74 @@ header > nav > ul > li:nth-of-type(3) a::after{
   position: absolute;
   top: .5em;
 }
+
+/* --- */
+
+/* background clouds */
+
+.cloudcontainer {
+	width: 0em;
+	height: 0em;
+	background: turquoise;
+	animation: 2s clouds forwards ease-in-out, 80s clouds-slow forwards 2s linear, 80s clouds-slow reverse forwards 82s linear;
+  transform-origin: bottom center;
+
+  z-index: 0;
+}
+
+.cloud {
+  background: transparent;
+  border-radius: 50%;
+  width: 25em;
+  height: 15em;
+
+  position: absolute;
+	top: -10em;
+	left: 0;
+
+}
+
+#cloud-back {
+  filter: url(#filter-back);
+  box-shadow: 0em 20em 5em -1em #fff;
+}
+
+#cloud-mid {
+  filter: url(#filter-mid);
+  box-shadow: 0em 23em 5em -2em rgba(158, 168, 179, 0.2);
+  /* left: -25vw; */
+}
+
+#cloud-front {
+  filter: url(#filter-front);
+  box-shadow: 0em 23em 5em -4em rgba(0, 0, 0, 0.1);
+  /* left: -25vw; */
+}
+
+
+@keyframes clouds {
+	0% {
+		opacity: 0;
+    transform: scale(0.5) translateY(0);
+	}
+	100% {
+		opacity: 0.8;
+    transform: scale(1) translateY(-10em);
+	}
+}
+
+@keyframes clouds-slow {
+  0% {
+		opacity: 0.8;
+    transform: scale(1) translate(0em, -10em);
+	}
+	100% {
+		opacity: 0.8;
+    transform: scale(1) translate(10em, -20em);
+	}
+}
+
+/* bron clouds effect: https://css-tricks.com/drawing-realistic-clouds-with-svg-and-css/ */
 
 /* --- */
 
