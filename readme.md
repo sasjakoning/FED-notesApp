@@ -60,7 +60,9 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 ### Stand van zaken
 
--dit ging goed & dit was lastig-
+Voor de eerste feedback ronde had ik al een groot deel van mijn eerste webpagina af. Ik had alle html geschreven en een boel dingen al in css gedaan.
+Wat nog miste waren een aantal iconen die ik in illustrator zou maken en wat positie dingetjes die beter konden. Ik was ook al bezig geweest met javascript.
+Ik had een animatie gemaakt met Lottie.js en een aantal iconen random laten bewegen per page refresh.
 
 **Screenshot(s):**
 
