@@ -6,7 +6,7 @@
 
 :root {
   --text-color: #FFFF;
-  --transparent-text: rgba(255, 255, 255, 0.6);
+  --transparent-text: rgba(255, 255, 255, 0.5);
 
   --weather-clear: #3C82D7;
   --weather-clear-light: #649fe1;
@@ -14,7 +14,8 @@
   --sun-yellow: #FFDD00;
   --cloud-white: #FFFF;
   --light-grey: #dbe9f8;
-  --transparent-white: rgba(255, 255, 255, 0.3);
+  --transparent-white: rgba(255, 255, 255, 0.2);
+  --transparent-white-hover: rgba(255, 255, 255, 0.4);
 
   --randomRotation: 30deg;
 
@@ -45,10 +46,11 @@ main {
 
 header > nav {
   position: fixed;
-  left: 0;
-  right: 0;
+  /* left: 0;
+  right: 0; */
   top: 0;
-  padding: 0 10%;
+  width: 100%;
+  /* padding: 0 10%; */
   /* background: var(--weather-clear);
   background: linear-gradient(0deg, rgba(100,159,225,1) 0%, rgba(60,130,215,1) 100%);
   background-size: 100% 100vh; */
@@ -62,35 +64,73 @@ header > nav > ul {
 
   list-style-type: none;
   padding: 0;
+  margin: 1em;
+}
+
+header > nav > ul > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* plus icoontje met before after tags */
 
+header > nav > ul > li:nth-of-type(1) {
+  width: 1em;
+  height: 1em;
+}
+
+header > nav > ul > li:nth-of-type(1) a {
+  /* margin: 1em; */
+  width: 1em;
+  height: 1em;
+  position: relative;
+}
+
+
 header > nav > ul > li:nth-of-type(1) a::before{
   content: "";
   background: var(--cloud-white);
-  width: .2em;
+  width: .1em;
   height: 1em;
   position: absolute;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 header > nav > ul > li:nth-of-type(1) a::after{
   content: "";
   background: var(--cloud-white);
-  width: .2em;
+  width: .1em;
   height: 1em;
   position: absolute;
-  transform: rotate(90deg);
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
 /* --- */
 
 /* three dots menu icon */
 
-header > nav > ul > li:nth-of-type(3) a{
+header > nav > ul > li:nth-of-type(3) {
+  width: 1em;
+  height: 1em;
+}
+
+header > nav > ul > li:nth-of-type(3) > a {
+  width: 1em;
+  height: 1em;
+}
+
+/* header > nav > ul > li:nth-of-type(3) a{
   background: var(--cloud-white);
   width: 0.17em;
   height: 0.17em;
+  margin: 1em;
   border-radius: 50%;
   position: relative;
   display: flex;
@@ -103,7 +143,7 @@ header > nav > ul > li:nth-of-type(3) a::before{
   height: 0.17em;
   border-radius: 50%;
   position: absolute;
-  top:1em;
+  top:.35em;
 }
 
 header > nav > ul > li:nth-of-type(3) a::after{
@@ -113,8 +153,8 @@ header > nav > ul > li:nth-of-type(3) a::after{
   height: 0.17em;
   border-radius: 50%;
   position: absolute;
-  top: .5em;
-}
+  top: -.35em;
+} */
 
 /* --- */
 
@@ -369,6 +409,10 @@ header > nav > ul > li:nth-of-type(3) a::after{
   margin-top: 1em;
 }
 
+.mainContent__forecast > a:nth-of-type(2):hover, .mainContent__forecast > a:nth-of-type(2):active {
+  background-color: var(--transparent-white-hover);
+}
+
 /* --- */
 
 /* hourly forecast */
@@ -501,7 +545,7 @@ header > nav > ul > li:nth-of-type(3) a::after{
 .mainContent__aqi > ul > li:nth-of-type(1) > h3{
   color: var(--transparent-text);
   font-size: .8em;
-  font-weight: 100;
+  font-weight: 500;
 }
 
 .mainContent__aqi > ul > li:nth-of-type(1) > p {
@@ -559,14 +603,14 @@ footer {
 footer > p {
   margin: 0;
   color: var(--transparent-text);
-  font-size: .8em;
+  font-size: .7em;
 }
 
 footer > a {
   text-decoration: none;
   color: var(--cloud-white);
   padding-left: 1.3em;
-  font-size: .9em;
+  font-size: .8em;
   font-weight: 700;
   position: relative;
 }
