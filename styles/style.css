@@ -84,11 +84,10 @@ header > nav > ul > li:nth-of-type(1) a {
   /* margin: 1em; */
   width: 1em;
   height: 1em;
-  position: relative;
 }
 
 
-header > nav > ul > li:nth-of-type(1) a::before{
+/* header > nav > ul > li:nth-of-type(1) a::before{
   content: "";
   background: var(--cloud-white);
   width: .1em;
@@ -110,7 +109,7 @@ header > nav > ul > li:nth-of-type(1) a::after{
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(90deg);
-}
+} */
 
 /* --- */
 
@@ -125,6 +124,13 @@ header > nav > ul > li:nth-of-type(3) > a {
   width: 1em;
   height: 1em;
 }
+
+
+/* header > nav > ul > li:nth-of-type(3) > a > img {
+  width: 1em;
+  height: 1em;
+  font-size: 16px;
+} */
 
 /* header > nav > ul > li:nth-of-type(3) a{
   background: var(--cloud-white);
@@ -683,3 +689,29 @@ footer > a::before {
 }
 
 /* --- */
+
+.forecast__page > main > table {
+  background: yellowgreen;
+  text-align: center;
+}
+
+.forecast__page > main > table  tr > th {
+  font-weight: 400;
+}
+
+.forecast__page > main > table tr:nth-of-type(2) > td {
+  font-size: .8em;
+}
+
+.forecast__page > main > table tr:nth-of-type(3) > td img {
+  width: 2em;
+}
+
+.forecast__page > main > table tr:nth-of-type(6) > td img {
+  width: 2em;
+}
+
+.forecast__page > main > table tr:nth-of-type(7) > td img {
+  width: 1em;
+}
+
