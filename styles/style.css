@@ -578,3 +578,187 @@ footer > a::before {
 }
 
 /* --- */
+
+
+
+
+/* 5-day forecast page */
+
+.forecast__page {
+
+  --text-color: black;
+  --transparent-grey: rgba(165, 165, 165, 0.1);
+  --text-color-grey: rgba(128, 128, 128);
+  --text-color-blue: rgba(141, 147, 171);
+
+  --light-grey: rgba(197, 197, 197);
+  --lighter-grey: rgba(226, 226, 226);
+  
+  background: var(--cloud-white);
+  color: var(--text-color);
+}
+
+.forecast__page > header, .aqi__page > header {
+  margin: 2em 3%;
+}
+
+.forecast__page > header > nav img, .aqi__page > header > nav img {
+  width: 1.2em;
+  margin-top: 1em;
+}
+
+.forecast__page > header > h1, .aqi__page > header > h1 {
+  font-size: 1.4em;
+  margin-top: 2.5em;
+}
+
+
+/* --- */
+
+/* forecast svg styling */
+.forecast__temps__container{
+  height: 200px;
+  width: 500px;
+  background: red;
+}
+
+.forecast__temps__svg {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  background: #3C82D7;
+}
+
+#temps-group {
+  transform: translateY(50px);
+}
+
+#path_1 {
+  transform: translateY(-18px);
+}
+
+.st0{fill:none;stroke:#E2E1E0;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+.st1{font-family:sans-serif;}
+.st2{font-size:18px;}
+.st3{fill:#FFFFFF;}
+.st4{fill:#C8C6C6;}
+
+
+#group_1, #group_2, #group_3, #group_4, #group_5, #group_6 {
+  --translateY: 10px;
+
+  transform: translateY(var(--translateY));
+}
+
+/* --- */
+
+.forecast__page > main > table {
+  background: yellowgreen;
+  text-align: center;
+}
+
+.forecast__page > main > table  tr > th {
+  font-weight: 400;
+}
+
+.forecast__page > main > table tr:nth-of-type(2) > td {
+  font-size: .8em;
+}
+
+.forecast__page > main > table tr:nth-of-type(3) > td img {
+  width: 2em;
+}
+
+.forecast__page > main > table tr:nth-of-type(6) > td img {
+  width: 2em;
+}
+
+.forecast__page > main > table tr:nth-of-type(7) > td img {
+  width: 1em;
+}
+
+
+
+
+/* Air quality index page */
+
+.aqi__page {
+
+  --text-color: black;
+  --transparent-grey: rgba(165, 165, 165, 0.1);
+  --text-color-grey: rgba(128, 128, 128);
+  --text-color-blue: rgba(141, 147, 171);
+  --title-yellow: #ffb951;
+  --sub-green: #13d080;
+
+  --light-grey: rgba(197, 197, 197);
+  --lighter-grey: rgba(226, 226, 226);
+  
+  background: var(--cloud-white);
+  color: var(--text-color);
+
+}
+
+.aqi__page main > h1 {
+  color: var(--title-yellow);
+}
+
+.aqi__page h1 > span {
+  font-size: 3em;
+}
+
+.aqi__page main > p:nth-of-type(1) {
+  font-size: .8em;
+  margin: 1em 0 2em 0;
+}
+
+.aqi__page main > ul {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.aqi__page main > ul > li:not(:first-of-type) {
+  margin: 0 1em;
+}
+
+.aqi__page main > ul > li > p:first-of-type {
+  color: var(--sub-green);
+}
+
+.aqi__page main > ul > li > p:nth-of-type(2) {
+  font-size: .6em;
+  margin-top: .5em;
+}
+
+.aqi__page main > a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: .8em;
+  display: block;
+  margin-top: 4em;
+  position: relative;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--lighter-grey);
+}
+
+.aqi__page main > a::after {
+  content: "";
+  position: absolute;
+
+  width: .7em;
+  height: .7em;
+
+  transform: rotate(45deg);
+  right: 0;
+  top: .2em;
+
+  border-top: 1px solid var(--text-color );
+  border-right: 1px solid var(--text-color);
+}
+
+.aqi__page footer p {
+  color: var(--text-color-grey);
+}
+
+
+/* --- */
