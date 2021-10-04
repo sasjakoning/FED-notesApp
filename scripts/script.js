@@ -15,28 +15,12 @@ var animation = bodymovin.loadAnimation({
 animation.setSpeed(1.5);
 
 const segments = [40, 10, 20, 61];
-// const randomElement = Math.floor(Math.random() * segments.length);
 
 var randomElement = segments[Math.floor(Math.random() * segments.length)];
 setTimeout(function () {
   animation.playSegments([1, randomElement], true);
 }, 2000);
 
-// container.addEventListener("click", () => {
-
-//     console.log(randomElement)
-
-//     animation.playSegments([1, randomElement], true)
-
-// })
-
-// if(state === "fave") {
-//     animation.playSegments([1, 40], true);
-//     state = "unfave"
-// }else {
-//     animation.playSegments([40, 1], true);
-//     state = "fave"
-// }
 
 // random wind speed direction
 
@@ -53,68 +37,97 @@ rotation.forEach((element) => {
 
 // random numbers: https://css-tricks.com/random-numbers-css/
 
-const svgElement = document.querySelector(".forecast__temps");
-const svgPath = document.getElementById("path_1");
 
-const svgGroup3Dot = document.getElementById("group-3-dot");
+let pathNumber = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+let plusOrMinus = ["", "", "", "", "", "", "", "", "", "", "", ""];
 
-console.log(svgElement, svgPath);
+let tempGroup = document.querySelectorAll("#temps-group > g")
 
-let number = 0;
+console.log(tempGroup)
 
-// generate random temperature number
-const randomTemperature = Math.floor(Math.random() * 44);
-number = randomTemperature * 2;
-// let pathNumber = randomTemperature + 2;
+tempGroup.forEach((group, index) => {
 
-console.log("random temperature is", randomTemperature);
+  // console.log(group.firstChild.nextSibling, index)
 
-function randomlyGeneratedTemps() {
-  let textDing = document.getElementById("group-1-temp");
-  let root = document.getElementById("group_1");
-  let pathNumber = 0;
-  let plusOrMinus = "";
+  const randomTemperature = Math.floor(Math.random() * 44);
+  number = randomTemperature * 2;
 
-  // if temperatuur onder 22 graden zit
-  if (randomTemperature < 22) {
-    root.style.setProperty("--translateY", "-" + number + "px");
+  let tempText = document.querySelector("text")
 
-    textDing.textContent = randomTemperature + "°";
+  if(randomTemperature < 22) {
+    group.style.setProperty("--translateY", "-" + number + "px")
 
-    pathNumber = randomTemperature - 22;
-    pathNumber = pathNumber * 2;
-    pathNumber = Math.abs(pathNumber - 0);
+    tempText.textContent = randomTemperature + "°";
 
-    // if temperatuur boven 22 graden zit
-  } else {
-    root.style.setProperty("--translateY", "-" + number + "px");
+    pathNumber[index] = randomTemperature - 22;
+    pathNumber[index] = pathNumber[index] * 2;
+    pathNumber[index] = Math.abs(pathNumber[index] - 0);
 
-    textDing.textContent = randomTemperature + "°";
-    pathNumber = randomTemperature - 22;
-    pathNumber = pathNumber * 2;
+  }else {
+    group.style.setProperty("--translateY", "-" + number + "px")
+    
+    tempText.textContent = randomTemperature + "°";
 
-    plusOrMinus = "-";
+    pathNumber[index] = randomTemperature - 22;
+    pathNumber[index] = pathNumber[index] * 2;
+
+    plusOrMinus[index] = "-";
   }
 
-  // functie om het path te selecteren en de attribute te veranderen
-  function pathPoints(pointsList) {
-    let polyline = document.getElementById("path_1");
+  console.log(randomTemperature, pathNumber[index])
 
-    polyline.setAttribute("points", pointsList);
-  }
+  // console.log(tempText.textContent, index)
 
-  console.log("number is", number, "pathnumber is", pathNumber);
+  // function pathPoints(pointsList) {
+  //   let polyline = document.getElementById("path_1");
+  
+  //   polyline.setAttribute("points", pointsList);
+  // }
+  
+  // pathPoints(
+  //   "12," +
+  //     plusOrMinus +
+  //     pathNumber +
+  //     " 97.9,0 183.8,0  269.7,0  355.6,0  441.5,0"
+  // );
 
-  // de nummers zijn de cods van de path points, bepaald door de hoogte van de temperatuur
-  pathPoints(
-    "12," +
-      plusOrMinus +
-      pathNumber +
-      " 97.9,0 183.8,0  269.7,0  355.6,0  441.5,0"
-  );
+  // switch(index) {
+  //   case 0 :
+  //     console.log("hello")
+  //     break;
+  //   case 1 :
+  //     console.log("hello")
+  //     break;
+  //   case 2 :
+  //     console.log("hello")
+  //     break;
+  //   default:
+  //     console.log("doesnt work")
+  // }
+
+})
+
+
+function pathPoints(pointsList) {
+  let polyline = document.getElementById("path_1");
+
+  polyline.setAttribute("points", pointsList);
 }
 
-randomlyGeneratedTemps();
+pathPoints(
+  "12," +
+    plusOrMinus[0] +
+    pathNumber[0] +
+    " 97.9," + plusOrMinus[1] +
+    pathNumber[1] +
+    " 183.8," + plusOrMinus[2] +
+    pathNumber[2] +
+    " 269.7," + plusOrMinus[3] +
+    pathNumber[3] +
+    " 355.6," + plusOrMinus[4] +
+    pathNumber[4] +
+    " 441.5," + plusOrMinus[5] +
+    pathNumber[5]
+);
 
-// math.abs https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs
-// change css variable: https://css-tricks.com/updating-a-css-variable-with-javascript/
+console.log(plusOrMinus, pathNumber)
