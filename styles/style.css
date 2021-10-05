@@ -755,7 +755,7 @@ footer > a::before {
 
   transform: rotate(45deg);
   right: 0;
-  top: .2em;
+  top: 1.2em;
 
   border-top: 1px solid var(--text-color );
   border-right: 1px solid var(--text-color);
