@@ -1,13 +1,18 @@
 <!doctype html>
 <html lang="nl">
-	
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="author" content="jouw naam">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<title>Naam van je site en/of pagina</title>
-	
+
+	<title>Weather</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+		rel="stylesheet">
+
 	<link href="styles/style.css" rel="stylesheet">
 </head>
 
@@ -17,21 +22,52 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="#"></a>
+					<a href="#">
+						<img src="images/add-icon.svg" alt="Add more cities">
+					</a>
 				</li>
 				<li>
 					Zwaagdijk-Oost
 				</li>
 				<li>
-					<a href="#"></a>
+					<a href="#">
+						<img src="images/menu-icon.svg" alt="Settings menu">
+					</a>
 				</li>
 			</ul>
 		</nav>
 	</header>
 
+		<!-- background figure van wolken -->
+
+		<section class="cloudcontainer">
+
+			<figure></figure>
+			<figure></figure>
+			<figure></figure>
+	
+			<svg width="0" height="0">
+				<filter id="filter-back">
+					<feTurbulence type="fractalNoise" baseFrequency="0.003" numOctaves="10" seed="300" />
+					<feDisplacementMap in="SourceGraphic" scale="459" />
+				</filter>
+	
+				<filter id="filter-mid">
+					<feTurbulence type="fractalNoise" baseFrequency="0.003" numOctaves="5" seed="300" />
+					<feDisplacementMap in="SourceGraphic" scale="400" />
+				</filter>
+	
+				<filter id="filter-front">
+					<feTurbulence type="fractalNoise" baseFrequency="0.003" numOctaves="2" seed="300" />
+					<feDisplacementMap in="SourceGraphic" scale="400" />
+				</filter>
+			</svg>
+			<!-- bron clouds effect: https://css-tricks.com/drawing-realistic-clouds-with-svg-and-css/ -->
+		</section>
+
 	<main>
 
-		<section>
+		<article class="temperature">
 			<!-- Temp, cloudy, AQI -->
 			<h1>
 				24
@@ -39,71 +75,96 @@
 			<p>
 				Clear
 			</p>
-			<a href="#">AQI 53</a>
-		</section>
+			<a href="airquality.html">AQI 53</a>
+		</article>
 
-		<article>
+		<section class="mainContent">
 
-			<section>
+			<article class="mainContent__forecast">
 				<!-- voorspellingen, 5 day forecast -->
 				<a href="#">More details</a>
 				<table>
 					<tr>
+						<td><img src="images/thunderstorm.svg" alt=""></td>
 						<td>Thu - Thunderstorm</td>
-						<td>24/17</td>
+						<td>24° / 17°</td>
 					</tr>
 					<tr>
+						<td><img src="images/thunderstorm.svg" alt=""></td>
 						<td>Fri - Thunderstorm</td>
-						<td>22/16</td>
+						<td>22° / 16°</td>
 					</tr>
 					<tr>
+						<td><img src="images/cloudy-sun.svg" alt=""></td>
 						<td>Sat - Cloudy</td>
-						<td>20/15</td>
+						<td>20° / 15°</td>
 					</tr>
 				</table>
-				<a href="#">5-day forecast</a>
-			</section>
+				<a href="forecast.html">5-day forecast</a>
+			</article>
 
-			<section>
+			<article class="mainContent__hourly">
 				<!-- voorspelling per uur (slider) -->
 				<ul>
 					<li>
 						<p>Now</p>
-						<p>24</p>
-						<img src="" alt="">
-						<p>22.2km/h</p>
+						<p>24°</p>
+						<img src="images/sunny.svg" alt="icon of sun">
+						<div class="mainContent__hourly__windSpeed">
+							<img src="images/wind-arrow.svg" alt="">
+							<p>22.2km/h</p>
+						</div>
 					</li>
 					<li>
 						<p>17:00</p>
-						<p>24</p>
-						<img src="" alt="">
-						<p>22.2km/h</p>
+						<p>24°</p>
+						<img src="images/cloudy-sun.svg" alt="icon of cloudiness with sun">
+						<div class="mainContent__hourly__windSpeed">
+							<img src="images/wind-arrow.svg" alt="">
+							<p>22.2km/h</p>
+						</div>
 					</li>
 					<li>
 						<p>18:00</p>
-						<p>24</p>
-						<img src="" alt="">
-						<p>22.2km/h</p>
+						<p>24°</p>
+						<img src="images/cloudy-sun.svg" alt="icon of cloudiness with sun">
+						<div class="mainContent__hourly__windSpeed">
+							<img src="images/wind-arrow.svg" alt="">
+							<p>22.2km/h</p>
+						</div>
 					</li>
 					<li>
 						<p>19:00</p>
-						<p>24</p>
-						<img src="" alt="">
-						<p>22.2km/h</p>
+						<p>24°</p>
+						<img src="images/cloudy-sun.svg" alt="icon of cloudiness with sun">
+						<div class="mainContent__hourly__windSpeed">
+							<img src="images/wind-arrow.svg" alt="">
+							<p>22.2km/h</p>
+						</div>
 					</li>
 					<li>
 						<p>20:00</p>
-						<p>24</p>
-						<img src="" alt="">
+						<p>24°</p>
+						<img src="images/cloudy-sun.svg" alt="icon of cloudiness with sun">
 						<p>22.2km/h</p>
 					</li>
+					<li>
+						<p>21:00</p>
+						<p>24°</p>
+						<img src="images/cloudy-sun.svg" alt="icon of cloudiness with sun">
+						<div class="mainContent__hourly__windSpeed">
+							<img src="images/wind-arrow.svg" alt="">
+							<p>22.2km/h</p>
+						</div>
+					</li>
 				</ul>
-			</section>
+			</article>
 
-			<section>
+			<article class="mainContent__additional">
 				<!-- sunset/rise, feel, humid etc -->
-				<div class="sunrise">
+				<div class="mainContent__additional__sunrise">
 					<!-- svg anim -->
+					<div class="sunAnim"></div>
 					<p>Sunrise 07:03</p>
 					<p>Sunset 20:10</p>
 				</div>
@@ -113,44 +174,44 @@
 						<p>22.9</p>
 					</li>
 					<li>
-						<p>Chance of rain</p>
-						<p>40%</p>
-					</li>
-					<li>
-						<p>Wind speed</p>
-						<p>22.2km/h</p>
-					</li>
-					<li>
 						<p>Humidity</p>
 						<p>72%</p>
+					</li>
+					<li>
+						<p>Chance of rain</p>
+						<p>40%</p>
 					</li>
 					<li>
 						<p>Pressure</p>
 						<p>1009mbar</p>
 					</li>
 					<li>
+						<p>Wind speed</p>
+						<p>22.2km/h</p>
+					</li>
+					<li>
 						<p>UV index</p>
 						<p>1</p>
 					</li>
 				</ul>
-			</section>
+			</article>
 
-			<section>
+			<article class="mainContent__aqi">
 				<!-- air quality index -->
 				<ul>
 					<li>
-						<h2>
+						<h3>
 							Air quality index
-						</h2>
+						</h3>
 						<p>53</p>
 					</li>
 					<li>
 						<a href="#">Full air quality forecast</a>
 					</li>
 				</ul>
-			</section>
+			</article>
 
-		</article>
+			</article>
 
 	</main>
 
@@ -159,7 +220,8 @@
 		<a href="#">AccuWeather</a>
 	</footer>
 
+	<script src="scripts/lottie.js"></script>
 	<script src="scripts/script.js"></script>
 </body>
-	
+
 </html>
