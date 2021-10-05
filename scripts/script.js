@@ -2,14 +2,14 @@
 
 function Page() {
   if (document.querySelector("body").classList.contains("forecast__page")) {
-    let pathNumber = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let plusOrMinus = ["", "", "", "", "", "", "", "", "", "", "", ""];
+    // Forecast page dynamic temperatures
 
-    let tempGroup = document.querySelectorAll("#temps-group1 > g");
+    const tempGroup1 = document.querySelectorAll("#temps-group1 > g");
 
-    console.log(tempGroup);
+    let pathNumber1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-    tempGroup.forEach((group, index) => {
+    tempGroup1.forEach((group, index) => {
+
       const randomTemperature = Math.floor(Math.random() * 22);
       number = randomTemperature * 2;
       groupNumber = index + 1;
@@ -23,16 +23,17 @@ function Page() {
 
         tempText.textContent = randomTemperature + "°";
 
-        pathNumber[index] = 22 + (11 - randomTemperature) * 2;
+        pathNumber1[index] = 22 + (11 - randomTemperature) * 2;
       } else {
         group.style.setProperty("--translateY", "-" + number + "px");
 
         tempText.textContent = randomTemperature + "°";
 
-        pathNumber[index] = 22 + (11 - randomTemperature) * 2;
+        pathNumber1[index] = 22 + (11 - randomTemperature) * 2;
       }
     });
 
+    
     function pathPoints1(pointsList) {
       let polyline = document.getElementById("path_1");
 
@@ -41,25 +42,73 @@ function Page() {
 
     pathPoints1(
       "12," +
-        pathNumber[0] +
+        pathNumber1[0] +
         " 97.9," +
-        pathNumber[1] +
+        pathNumber1[1] +
         " 183.8," +
-        pathNumber[2] +
+        pathNumber1[2] +
         " 269.7," +
-        pathNumber[3] +
+        pathNumber1[3] +
         " 355.6," +
-        pathNumber[4] +
+        pathNumber1[4] +
         " 441.5," +
-        pathNumber[5]
+        pathNumber1[5]
     );
 
+    const tempGroup2 = document.querySelectorAll("#temps-group2 > g");
 
+    let pathNumber2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
+    tempGroup2.forEach((group, index) => {
 
+      const randomTemperature = Math.floor(Math.random() * (44 - 23)) + 23;
+      number = randomTemperature * 2;
+      groupNumber = index + 1;
+
+      let tempText = document.querySelector(
+        "#temps-group2 > g > " + "#group-" + groupNumber + "-temp"
+      );
+
+      if (randomTemperature < 33) {
+        group.style.setProperty("--translateY", "-" + number + "px");
+
+        tempText.textContent = randomTemperature + "°";
+
+        pathNumber2[index] = 22 + (2 - randomTemperature) * 2;
+      } else {
+        group.style.setProperty("--translateY", "-" + number + "px");
+
+        tempText.textContent = randomTemperature + "°";
+
+        pathNumber2[index] = 22 + (2 - randomTemperature) * 2;
+      }
+
+    });
+
+    function pathPoints2(pointsList) {
+      let polyline = document.getElementById("path_2");
+
+      polyline.setAttribute("points", pointsList);
+    }
+
+    // assign values to each path point matching the temperature
+
+    pathPoints2(
+      "12," +
+        pathNumber2[0] +
+        " 97.9," +
+        pathNumber2[1] +
+        " 183.8," +
+        pathNumber2[2] +
+        " 269.7," +
+        pathNumber2[3] +
+        " 355.6," +
+        pathNumber2[4] +
+        " 441.5," +
+        pathNumber2[5]
+    );
 
   } else {
-
     // sunrise/down animation
 
     const container = document.querySelector(".sunAnim");
