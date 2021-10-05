@@ -14,7 +14,7 @@ function Page() {
       number = randomTemperature * 2;
       groupNumber = index + 1;
 
-      let tempText = document.querySelector("#group-" + groupNumber + "-temp");
+      let tempText = document.querySelector("#temps-group1 > g > " + "#group-" + groupNumber + "-temp");
 
       console.log(tempText, index);
 
