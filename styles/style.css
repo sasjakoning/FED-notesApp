@@ -616,17 +616,23 @@ footer > a::before {
 /* --- */
 
 /* forecast svg styling */
+
+.forecast__page main table tr:nth-of-type(4), .forecast__page main table tr:nth-of-type(5) {
+  position: relative;
+  height: 5em;
+}
+
 .forecast__temps__container{
-  height: 200px;
-  width: 500px;
-  background: red;
+  width: 427px;
+  /* margin-bottom: -3em; */
+  margin-top: -2em;
+  position: absolute;
 }
 
 .forecast__temps__svg {
   position: relative;
   height: 200px;
   width: 100%;
-  background: #3C82D7;
 }
 
 #temps-group {
@@ -653,7 +659,6 @@ footer > a::before {
 /* --- */
 
 .forecast__page > main > table {
-  background: yellowgreen;
   text-align: center;
 }
 
