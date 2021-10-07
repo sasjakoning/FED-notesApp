@@ -103,8 +103,8 @@ header > nav > ul {
 
   list-style-type: none;
 
-  padding: 0;
-  margin: 1em;
+  padding: 0 1em;
+  margin: 1em 0 0 0;
 }
 
 header > nav > ul > li {
@@ -598,6 +598,10 @@ footer > a::before {
   color: var(--text-color);
 }
 
+.forecast__page main {
+  overflow: scroll;
+}
+
 .forecast__page > header, .aqi__page > header {
   margin: 2em 3%;
 }
@@ -633,6 +637,7 @@ footer > a::before {
   position: relative;
   height: 200px;
   width: 100%;
+  margin-left: 1.5em;
 }
 
 #temps-group {
@@ -658,16 +663,59 @@ footer > a::before {
 
 /* --- */
 
+/* table */
+
+.forecast__page main table tr:nth-of-type(6) td {
+  height: 8em;
+  vertical-align: bottom;
+}
+
+
+.forecast__page main table tr th:nth-of-type(2) {
+  position: relative;
+}
+
+.forecast__page main table tr th:nth-of-type(2)::after {
+  content: "";
+  background: var(--transparent-grey);
+  width: 100%;
+  height: 27em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 1em;
+}
+
+.forecast__page main table tr:nth-of-type(7) td div {
+  display: flex;
+  margin: 1.5em .3em 1em .45em;
+}
+
+
+.forecast__page main table tr:nth-of-type(7) td img{
+  width: .8em;
+  height: .8em;
+}
+
+.forecast__page main table tr:nth-of-type(7) td p{
+  font-size: .7em;
+  margin-top: .2em;
+}
+
 .forecast__page > main > table {
   text-align: center;
+  color: var(--text-color-grey);
 }
 
 .forecast__page > main > table  tr > th {
   font-weight: 400;
+  padding-top: 1em;
 }
 
 .forecast__page > main > table tr:nth-of-type(2) > td {
-  font-size: .8em;
+  font-size: .6em;
+  padding: .8em 0 1.5em 0;
 }
 
 .forecast__page > main > table tr:nth-of-type(3) > td img {
@@ -680,6 +728,7 @@ footer > a::before {
 
 .forecast__page > main > table tr:nth-of-type(7) > td img {
   width: 1em;
+  transform: rotate(var(--randomRotation));
 }
 
 
