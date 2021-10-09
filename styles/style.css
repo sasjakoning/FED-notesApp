@@ -1,8 +1,55 @@
-/* CSS Document */
-*, *::after, *::before {
-  box-sizing:border-box;  
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
+/* einde css reset */
+
+
+/* general styling */
 
 :root {
   --text-color: #FFFF;
@@ -28,32 +75,24 @@ body{
 
   font-family: "Inter", "Arial", sans-serif;
 
-  margin: 0;
-  padding: 0;
-
   overflow-x: hidden;
 }
 
 main {
   margin: 3%;
+  scroll-margin: 3em;
 }
 
-/* nav */
+/* --- */
 
-/* header {
-  margin: 0 10%;
-} */
+
+
+/* header , navigation */
 
 header > nav {
   position: fixed;
-  /* left: 0;
-  right: 0; */
   top: 0;
   width: 100%;
-  /* padding: 0 10%; */
-  /* background: var(--weather-clear);
-  background: linear-gradient(0deg, rgba(100,159,225,1) 0%, rgba(60,130,215,1) 100%);
-  background-size: 100% 100vh; */
 
   z-index: 100;
 }
@@ -63,8 +102,9 @@ header > nav > ul {
   justify-content: space-between;
 
   list-style-type: none;
-  padding: 0;
-  margin: 1em;
+
+  padding: 0 1em;
+  margin: 1em 0 0 0;
 }
 
 header > nav > ul > li {
@@ -73,98 +113,17 @@ header > nav > ul > li {
   justify-content: center;
 }
 
-/* plus icoontje met before after tags */
+/* plus icoontje en three dots menu icon */
 
-header > nav > ul > li:nth-of-type(1) {
+header > nav > ul > li:nth-of-type(1), header > nav > ul > li:nth-of-type(1) a, header > nav > ul > li:nth-of-type(3), header > nav > ul > li:nth-of-type(3) > a {
   width: 1em;
   height: 1em;
 }
 
-header > nav > ul > li:nth-of-type(1) a {
-  /* margin: 1em; */
-  width: 1em;
-  height: 1em;
-}
-
-
-/* header > nav > ul > li:nth-of-type(1) a::before{
-  content: "";
-  background: var(--cloud-white);
-  width: .1em;
-  height: 1em;
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-header > nav > ul > li:nth-of-type(1) a::after{
-  content: "";
-  background: var(--cloud-white);
-  width: .1em;
-  height: 1em;
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(90deg);
-} */
 
 /* --- */
 
-/* three dots menu icon */
-
-header > nav > ul > li:nth-of-type(3) {
-  width: 1em;
-  height: 1em;
-}
-
-header > nav > ul > li:nth-of-type(3) > a {
-  width: 1em;
-  height: 1em;
-}
-
-
-/* header > nav > ul > li:nth-of-type(3) > a > img {
-  width: 1em;
-  height: 1em;
-  font-size: 16px;
-} */
-
-/* header > nav > ul > li:nth-of-type(3) a{
-  background: var(--cloud-white);
-  width: 0.17em;
-  height: 0.17em;
-  margin: 1em;
-  border-radius: 50%;
-  position: relative;
-  display: flex;
-}
-
-header > nav > ul > li:nth-of-type(3) a::before{
-  content: "";
-  background: var(--cloud-white);
-  width: 0.17em;
-  height: 0.17em;
-  border-radius: 50%;
-  position: absolute;
-  top:.35em;
-}
-
-header > nav > ul > li:nth-of-type(3) a::after{
-  content: "";
-  background: var(--cloud-white);
-  width: 0.17em;
-  height: 0.17em;
-  border-radius: 50%;
-  position: absolute;
-  top: -.35em;
-} */
-
-/* --- */
-
-/* background clouds */
+/* wolken op de achtergrond */
 
 .cloudcontainer {
 	width: 0em;
@@ -176,7 +135,7 @@ header > nav > ul > li:nth-of-type(3) a::after{
   z-index: 0;
 }
 
-.cloud {
+.cloudcontainer > figure {
   background: transparent;
   border-radius: 50%;
   width: 25em;
@@ -188,21 +147,19 @@ header > nav > ul > li:nth-of-type(3) a::after{
 
 }
 
-#cloud-back {
+.cloudcontainer > figure:nth-of-type(1) {
   filter: url(#filter-back);
   box-shadow: 0em 20em 5em -1em #fff;
 }
 
-#cloud-mid {
+.cloudcontainer > figure:nth-of-type(2) {
   filter: url(#filter-mid);
   box-shadow: 0em 23em 5em -2em rgba(158, 168, 179, 0.2);
-  /* left: -25vw; */
 }
 
-#cloud-front {
+.cloudcontainer > figure:nth-of-type(3) {
   filter: url(#filter-front);
   box-shadow: 0em 23em 5em -4em rgba(0, 0, 0, 0.1);
-  /* left: -25vw; */
 }
 
 
@@ -232,6 +189,8 @@ header > nav > ul > li:nth-of-type(3) a::after{
 
 /* --- */
 
+
+
 /* temperature, cloudiness, AQI */
 
 .temperature {
@@ -239,14 +198,18 @@ header > nav > ul > li:nth-of-type(3) a::after{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   margin-bottom: 6em;
 }
 
 .temperature > h1{
   font-size: 8em;
   font-weight: 300;
+
   margin: 1em 0 0 0;
+
   position: relative;
+
   background: rgb(219,233,248);
   background: linear-gradient(0deg, rgba(219,233,248,1) 0%, rgb(255, 255, 255) 100%);
   background-clip: text;
@@ -260,9 +223,11 @@ header > nav > ul > li:nth-of-type(3) a::after{
   content: "";
   position: absolute;
   top: .2em;
+  right: -.08em;
 
-  width: .08em;
-  height: .08em;
+  width: .03em;
+  height: .03em;
+
   border-radius: 50%;
   border: 3px solid var(--text-color);
 }
@@ -270,10 +235,12 @@ header > nav > ul > li:nth-of-type(3) a::after{
 .temperature > h1::before{
   content: "C";
   position: absolute;
+
   top: 1.2em;
+  right: -1.4em;
+
   font-size: .15em;
   font-weight: 700;
-  right: -1.4em;
   -webkit-text-fill-color: white;
 }
 
@@ -285,12 +252,13 @@ header > nav > ul > li:nth-of-type(3) a::after{
 .temperature > a {
   text-decoration: none;
   color: var(--text-color);
-  font-size: 0.8em;
-  margin-top: 1em;
   background: var(--transparent-white);
+  position: relative;
+  font-size: 0.8em;
+
+  margin-top: 1em;
   padding: 0.5em 1em 0.5em 2em;
   border-radius: 5em;
-  position: relative;
 }
 
 .temperature > a::before {
@@ -298,6 +266,7 @@ header > nav > ul > li:nth-of-type(3) a::after{
   background-image: url(../images/aqi-leaf.svg);
   background-size: cover;
   position: absolute;
+
   width: 1em;
   height: 1em;
   left: .7em;
@@ -317,11 +286,13 @@ header > nav > ul > li:nth-of-type(3) a::after{
 
 .mainContent__forecast > a:nth-of-type(1) {
   text-decoration: none;
-  color: var(--text-color);
-  font-size: .7em;
+
   display: flex;
   justify-content: flex-end;
   position: relative;
+
+  color: var(--text-color);
+  font-size: .7em;
   padding-right: .9em;
 }
 
@@ -330,8 +301,10 @@ header > nav > ul > li:nth-of-type(3) a::after{
 .mainContent__forecast > a:nth-of-type(1)::after {
   content: "";
   position: absolute;
+
   width: .7em;
   height: .7em;
+
   transform: rotate(45deg);
   right: 0;
   top: .2em;
@@ -345,6 +318,8 @@ header > nav > ul > li:nth-of-type(3) a::after{
   line-height: 2em;
   text-align: left;
 }
+
+
 
 .mainContent__forecast  tr > td:nth-of-type(3) {
   text-align: right;
@@ -364,55 +339,19 @@ header > nav > ul > li:nth-of-type(3) a::after{
   height: 1.7em;
 }
 
-/* .mainContent__forecast tr:nth-of-type(1) > td:first-of-type::before {
-  content: "";
-  position: absolute;
-  background: var(--cloud-white);
-
-  width: .7em;
-  height: .7em;
-  top: 50%;
-  bottom: 50%;
-  transform: translate(-50%, -50%);
-  left: 0;
-}
-
-.mainContent__forecast tr:nth-of-type(2) > td:first-of-type::before {
-  content: "";
-  position: absolute;
-  background: var(--cloud-white);
-
-  width: .7em;
-  height: .7em;
-  top: 50%;
-  bottom: 50%;
-  transform: translate(-50%, -50%);
-  left: 0;
-}
-
-.mainContent__forecast tr:nth-of-type(3) > td:first-of-type::before {
-  content: "";
-  position: absolute;
-  background: var(--cloud-white);
-
-  width: .7em;
-  height: .7em;
-  top: 50%;
-  bottom: 50%;
-  transform: translate(-50%, -50%);
-  left: 0;
-} */
 
 .mainContent__forecast > a:nth-of-type(2){
   color: var(--cloud-white);
-  text-decoration: none;
   background: var(--transparent-white);
+
+  text-decoration: none;
   display: block;
+
   width: 100%;
   padding: .8em 0;
+  margin-top: 1em;
   border-radius: 5em;
 
-  margin-top: 1em;
 }
 
 .mainContent__forecast > a:nth-of-type(2):hover, .mainContent__forecast > a:nth-of-type(2):active {
@@ -421,6 +360,7 @@ header > nav > ul > li:nth-of-type(3) a::after{
 
 /* --- */
 
+
 /* hourly forecast */
 
 .mainContent__hourly > ul {
@@ -428,6 +368,7 @@ header > nav > ul > li:nth-of-type(3) a::after{
   list-style-type: none;
   overflow: scroll;
   padding: 0;
+  margin: 4em 0 1em 0;
 }
 
 .mainContent__hourly > ul > li {
@@ -505,24 +446,27 @@ header > nav > ul > li:nth-of-type(3) a::after{
 .mainContent__additional > ul {
   display: flex;
   flex-wrap: wrap;
+  text-align: left;
+
   list-style-type: none;
   padding: 0;
-  text-align: left;
   line-height: .5em;
 }
 
 .mainContent__additional > ul > li {
-  flex: 1 0 50%;
+  flex: 1 0 40%;
+  margin: 1em 0;
   /* https://www.codegrepper.com/code-examples/html/flexbox+limit+items+per+row */
 }
 
 .mainContent__additional > ul > li > p:first-of-type {
   color: var(--transparent-text);
   font-size: .8em;
+  margin-bottom: 1.3em;
 }
 
 .mainContent__additional > ul > li > p:last-of-type {
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .sunAnim {
@@ -537,12 +481,15 @@ header > nav > ul > li:nth-of-type(3) a::after{
 .mainContent__aqi{
   background: var(--transparent-white);
   border-radius: 1em;
+  margin: 1em 0;
+  padding: 1em 0;
 }
 
 .mainContent__aqi > ul {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+
   list-style-type: none;
   padding: 0 1em;
   text-align: left;
@@ -552,13 +499,14 @@ header > nav > ul > li:nth-of-type(3) a::after{
   color: var(--transparent-text);
   font-size: .8em;
   font-weight: 500;
+  margin-bottom: 1.3em;
 }
 
 .mainContent__aqi > ul > li:nth-of-type(1) > p {
   line-height: .5em;
   font-size: 1.2em;
   padding-left: 1.4em;
-  font-weight: 700;
+  font-weight: 500;
   position: relative;
 }
 
@@ -566,14 +514,11 @@ header > nav > ul > li:nth-of-type(3) a::after{
   content: "";
   position: absolute;
   background-image: url(../images/aqi-leaf.svg);
-  width: 1.2em;
-  height: 1.2em;
-  left: 0;
-  top: -.3em;
-}
 
-.mainContent__aqi > ul > li:nth-of-type(2) {
-  margin-bottom: .7em;
+  width: 1em;
+  height: 1em;
+  left: .2em;
+  top: -.3em;
 }
 
 .mainContent__aqi > ul > li:nth-of-type(2) > a {
@@ -587,10 +532,12 @@ header > nav > ul > li:nth-of-type(3) a::after{
 .mainContent__aqi > ul > li:nth-of-type(2) > a::after {
   content: "";
   position: absolute;
+
   width: .7em;
   height: .7em;
   top: .2em;
   right: .2em;
+
   transform: rotate(45deg);
   border-top: 1px solid var(--cloud-white);
   border-right: 1px solid var(--cloud-white);
@@ -633,6 +580,8 @@ footer > a::before {
 /* --- */
 
 
+
+
 /* 5-day forecast page */
 
 .forecast__page {
@@ -649,22 +598,46 @@ footer > a::before {
   color: var(--text-color);
 }
 
+.forecast__page main {
+  overflow: scroll;
+}
+
+.forecast__page > header, .aqi__page > header {
+  margin: 2em 3%;
+}
+
+.forecast__page > header > nav img, .aqi__page > header > nav img {
+  width: 1.2em;
+  margin-top: 1em;
+}
+
+.forecast__page > header > h1, .aqi__page > header > h1 {
+  font-size: 1.4em;
+  margin-top: 2.5em;
+}
 
 
 /* --- */
 
 /* forecast svg styling */
+
+.forecast__page main table tr:nth-of-type(4), .forecast__page main table tr:nth-of-type(5) {
+  position: relative;
+  height: 5em;
+}
+
 .forecast__temps__container{
-  height: 200px;
-  width: 500px;
-  background: red;
+  width: 427px;
+  /* margin-bottom: -3em; */
+  margin-top: -2em;
+  position: absolute;
 }
 
 .forecast__temps__svg {
   position: relative;
   height: 200px;
   width: 100%;
-  background: #3C82D7;
+  margin-left: 1.5em;
 }
 
 #temps-group {
@@ -690,17 +663,59 @@ footer > a::before {
 
 /* --- */
 
+/* table */
+
+.forecast__page main table tr:nth-of-type(6) td {
+  height: 8em;
+  vertical-align: bottom;
+}
+
+
+.forecast__page main table tr th:nth-of-type(2) {
+  position: relative;
+}
+
+.forecast__page main table tr th:nth-of-type(2)::after {
+  content: "";
+  background: var(--transparent-grey);
+  width: 100%;
+  height: 27em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 1em;
+}
+
+.forecast__page main table tr:nth-of-type(7) td div {
+  display: flex;
+  margin: 1.5em .3em 1em .45em;
+}
+
+
+.forecast__page main table tr:nth-of-type(7) td img{
+  width: .8em;
+  height: .8em;
+}
+
+.forecast__page main table tr:nth-of-type(7) td p{
+  font-size: .7em;
+  margin-top: .2em;
+}
+
 .forecast__page > main > table {
-  background: yellowgreen;
   text-align: center;
+  color: var(--text-color-grey);
 }
 
 .forecast__page > main > table  tr > th {
   font-weight: 400;
+  padding-top: 1em;
 }
 
 .forecast__page > main > table tr:nth-of-type(2) > td {
-  font-size: .8em;
+  font-size: .6em;
+  padding: .8em 0 1.5em 0;
 }
 
 .forecast__page > main > table tr:nth-of-type(3) > td img {
@@ -713,5 +728,91 @@ footer > a::before {
 
 .forecast__page > main > table tr:nth-of-type(7) > td img {
   width: 1em;
+  transform: rotate(var(--randomRotation));
 }
 
+
+
+
+/* Air quality index page */
+
+.aqi__page {
+
+  --text-color: black;
+  --transparent-grey: rgba(165, 165, 165, 0.1);
+  --text-color-grey: rgba(128, 128, 128);
+  --text-color-blue: rgba(141, 147, 171);
+  --title-yellow: #ffb951;
+  --sub-green: #13d080;
+
+  --light-grey: rgba(197, 197, 197);
+  --lighter-grey: rgba(226, 226, 226);
+  
+  background: var(--cloud-white);
+  color: var(--text-color);
+
+}
+
+.aqi__page main > h1 {
+  color: var(--title-yellow);
+}
+
+.aqi__page h1 > span {
+  font-size: 3em;
+}
+
+.aqi__page main > p:nth-of-type(1) {
+  font-size: .8em;
+  margin: 1em 0 2em 0;
+}
+
+.aqi__page main > ul {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.aqi__page main > ul > li:not(:first-of-type) {
+  margin: 0 1em;
+}
+
+.aqi__page main > ul > li > p:first-of-type {
+  color: var(--sub-green);
+}
+
+.aqi__page main > ul > li > p:nth-of-type(2) {
+  font-size: .6em;
+  margin-top: .5em;
+}
+
+.aqi__page main > a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: .8em;
+  display: block;
+  margin-top: 4em;
+  position: relative;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--lighter-grey);
+}
+
+.aqi__page main > a::after {
+  content: "";
+  position: absolute;
+
+  width: .7em;
+  height: .7em;
+
+  transform: rotate(45deg);
+  right: 0;
+  top: 1.2em;
+
+  border-top: 1px solid var(--text-color );
+  border-right: 1px solid var(--text-color);
+}
+
+.aqi__page footer p {
+  color: var(--text-color-grey);
+}
+
+
+/* --- */

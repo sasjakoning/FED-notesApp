@@ -1,120 +1,256 @@
 // JavaScript Document
 
-const container = document.querySelector(".sunAnim");
-let state = "fave";
+function Page() {
+  if (document.querySelector("body").classList.contains("forecast__page")) {
+    // Forecast page dynamic temperatures
 
-var animation = bodymovin.loadAnimation({
-  container: document.querySelector(".sunAnim"),
-  renderer: "svg",
-  loop: false,
-  autoplay: false,
-  easing: "ease-out",
-  path: "scripts/sunrise-down.json",
-});
+    const tempGroup1 = document.querySelectorAll("#temps-group1 > g");
 
-animation.setSpeed(1.5);
+    let pathNumber1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-const segments = [40, 10, 20, 61];
-// const randomElement = Math.floor(Math.random() * segments.length);
+    tempGroup1.forEach((group, index) => {
+      const randomTemperature = Math.floor(Math.random() * 22);
+      number = randomTemperature * 2;
+      groupNumber = index + 1;
 
-var randomElement = segments[Math.floor(Math.random() * segments.length)];
-setTimeout(function () {
-  animation.playSegments([1, randomElement], true);
-}, 2000);
+      let tempText = document.querySelector(
+        "#temps-group1 > g > " + "#group-" + groupNumber + "-temp"
+      );
 
-// container.addEventListener("click", () => {
+      console.log(tempText, index);
 
-//     console.log(randomElement)
+      if (randomTemperature < 11) {
+        group.style.setProperty("--translateY", "-" + number + "px");
 
-//     animation.playSegments([1, randomElement], true)
+        tempText.textContent = randomTemperature + "°";
 
-// })
+        pathNumber1[index] = 22 + (11 - randomTemperature) * 2;
+      } else {
+        group.style.setProperty("--translateY", "-" + number + "px");
 
-// if(state === "fave") {
-//     animation.playSegments([1, 40], true);
-//     state = "unfave"
-// }else {
-//     animation.playSegments([40, 1], true);
-//     state = "fave"
-// }
+        tempText.textContent = randomTemperature + "°";
 
-// random wind speed direction
+        pathNumber1[index] = 22 + (11 - randomTemperature) * 2;
+      }
+    });
 
-const rotation = document.querySelectorAll(
-  ".mainContent__hourly__windSpeed > img "
-);
+    function pathPoints1(pointsList) {
+      let polyline = document.getElementById("path_1");
 
-rotation.forEach((element) => {
-  element.style.setProperty(
-    "--randomRotation",
-    Math.floor(Math.random() * 360) + "deg"
-  );
-});
+      polyline.setAttribute("points", pointsList);
+    }
 
-// random numbers: https://css-tricks.com/random-numbers-css/
+    pathPoints1(
+      "12," +
+        pathNumber1[0] +
+        " 97.9," +
+        pathNumber1[1] +
+        " 183.8," +
+        pathNumber1[2] +
+        " 269.7," +
+        pathNumber1[3] +
+        " 355.6," +
+        pathNumber1[4] +
+        " 441.5," +
+        pathNumber1[5]
+    );
 
-const svgElement = document.querySelector(".forecast__temps");
-const svgPath = document.getElementById("path_1");
+    const tempGroup2 = document.querySelectorAll("#temps-group2 > g");
 
-const svgGroup3Dot = document.getElementById("group-3-dot");
+    let pathNumber2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-console.log(svgElement, svgPath);
+    tempGroup2.forEach((group, index) => {
+      const randomTemperature = Math.floor(Math.random() * (44 - 23)) + 23;
+      number = randomTemperature * 2;
+      groupNumber = index + 1;
 
-let number = 0;
+      let tempText = document.querySelector(
+        "#temps-group2 > g > " + "#group-" + groupNumber + "-temp"
+      );
 
-// generate random temperature number
-const randomTemperature = Math.floor(Math.random() * 44);
-number = randomTemperature * 2;
-// let pathNumber = randomTemperature + 2;
+      if (randomTemperature < 33) {
+        group.style.setProperty("--translateY", "-" + number + "px");
 
-console.log("random temperature is", randomTemperature);
+        tempText.textContent = randomTemperature + "°";
 
-function randomlyGeneratedTemps() {
-  let textDing = document.getElementById("group-1-temp");
-  let root = document.getElementById("group_1");
-  let pathNumber = 0;
-  let plusOrMinus = "";
+        pathNumber2[index] = 22 + (2 - randomTemperature) * 2;
+      } else {
+        group.style.setProperty("--translateY", "-" + number + "px");
 
-  // if temperatuur onder 22 graden zit
-  if (randomTemperature < 22) {
-    root.style.setProperty("--translateY", "-" + number + "px");
+        tempText.textContent = randomTemperature + "°";
 
-    textDing.textContent = randomTemperature + "°";
+        pathNumber2[index] = 22 + (2 - randomTemperature) * 2;
+      }
+    });
 
-    pathNumber = randomTemperature - 22;
-    pathNumber = pathNumber * 2;
-    pathNumber = Math.abs(pathNumber - 0);
+    function pathPoints2(pointsList) {
+      let polyline = document.getElementById("path_2");
 
-    // if temperatuur boven 22 graden zit
+      polyline.setAttribute("points", pointsList);
+    }
+
+    // assign values to each path point matching the temperature
+
+    pathPoints2(
+      "12," +
+        pathNumber2[0] +
+        " 97.9," +
+        pathNumber2[1] +
+        " 183.8," +
+        pathNumber2[2] +
+        " 269.7," +
+        pathNumber2[3] +
+        " 355.6," +
+        pathNumber2[4] +
+        " 441.5," +
+        pathNumber2[5]
+    );
+
+    // stukje code om de current day van de gebruiker op te halen en die + vorige en volgende dagen in de html neer te zetten
+    function DayAsString(dayIndex) {
+      var weekdays = new Array(7);
+      weekdays[0] = "Sun";
+      weekdays[1] = "Mon";
+      weekdays[2] = "Tue";
+      weekdays[3] = "Wed";
+      weekdays[4] = "Thu";
+      weekdays[5] = "Fri";
+      weekdays[6] = "Sat";
+
+      return weekdays[dayIndex];
+    }
+
+    var startDate = new Date();
+    var aryDates = GetDates(startDate, 7);
+
+    function GetDates(startDate, daysToAdd) {
+      let aryDates = [];
+
+      for (let i = 0; i <= daysToAdd; i++) {
+        const currentDate = new Date();
+
+        currentDate.setDate(startDate.getDate() + i);
+        aryDates.push(DayAsString(currentDate.getDay()));
+        // zet alle dagen logisch in een array op basis van current date
+      }
+
+      return aryDates;
+    }
+    // aangepaste bron van code hierboven over de dagen: http://jsfiddle.net/JamesHill/FMadf/
+
+    const dayTitle = document.querySelectorAll("main table tr > th");
+    // de th's waar de dagen in staan in html
+
+    dayTitle.forEach((day, index) => {
+      // kijkt naar de index van de dayTitle en hangt daar een dag aan
+      switch (index) {
+        case 0:
+          day.textContent = aryDates[6];
+          break;
+        case 1:
+          day.textContent = aryDates[0];
+          break;
+        case 2:
+          day.textContent = aryDates[1];
+          break;
+        case 3:
+          day.textContent = aryDates[2];
+          break;
+        case 4:
+          day.textContent = aryDates[3];
+          break;
+        case 5:
+          day.textContent = aryDates[4];
+          break;
+        case 6:
+          day.textContent = aryDates[5];
+          break;
+      }
+    });
+
+
+    // random weather icons
+    const weatherIcons = document.querySelectorAll("td > img");
+
+    console.log(weatherIcons);
+
+    const randomIcons = [
+      "images/forecast-page/cloudy-forecast-page.svg",
+      "images/forecast-page/cloudy-sun-forecast-page.svg",
+      "images/forecast-page/rain-forecast-page.svg",
+      "images/forecast-page/thunderstorm-forecast-page.svg",
+    ];
+
+    weatherIcons.forEach((icon) => {
+      const randomNumber = Math.floor(Math.random() * randomIcons.length);
+
+      icon.src = randomIcons[randomNumber];
+    });
+    // Bron random img src: https://www.peachpit.com/articles/article.aspx?p=2239154&seqNum=10
+
+
+    // random wind direction
+    const rotation = document.querySelectorAll(
+      "tr > td > div > img"
+    );
+
+    console.log(rotation)
+
+    rotation.forEach((element) => {
+      element.style.setProperty(
+        "--randomRotation",
+        Math.floor(Math.random() * 360) + "deg"
+      );
+    });
+
+
+
   } else {
-    root.style.setProperty("--translateY", "-" + number + "px");
+    // sunrise/down animation
 
-    textDing.textContent = randomTemperature + "°";
-    pathNumber = randomTemperature - 22;
-    pathNumber = pathNumber * 2;
+    // haalt de tijd van de gebruiker op in uren
+    const userTimeHours = new Date().getHours();
+    const userTimeMinutes = new Date().getMinutes();
 
-    plusOrMinus = "-";
+    console.log(userTimeHours, userTimeMinutes);
+
+    const container = document.querySelector(".sunAnim");
+    let state = "fave";
+
+    const animation = bodymovin.loadAnimation({
+      container: document.querySelector(".sunAnim"),
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+      easing: "ease-out",
+      path: "scripts/sunrise-down.json",
+    });
+
+    animation.setSpeed(1.5);
+
+    // maakt van de tijd in uren een hoeveelheid frames dat de animatie zal afspelen.
+    const randomElement = userTimeHours * 2.5;
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+    setTimeout(function () {
+      animation.playSegments([1, randomElement], true);
+    }, 2000);
+
+    // random wind speed direction
+
+    const rotation = document.querySelectorAll(
+      ".mainContent__hourly__windSpeed > img "
+    );
+
+    rotation.forEach((element) => {
+      element.style.setProperty(
+        "--randomRotation",
+        Math.floor(Math.random() * 360) + "deg"
+      );
+    });
+
+    // random numbers: https://css-tricks.com/random-numbers-css/
   }
-
-  // functie om het path te selecteren en de attribute te veranderen
-  function pathPoints(pointsList) {
-    let polyline = document.getElementById("path_1");
-
-    polyline.setAttribute("points", pointsList);
-  }
-
-  console.log("number is", number, "pathnumber is", pathNumber);
-
-  // de nummers zijn de cods van de path points, bepaald door de hoogte van de temperatuur
-  pathPoints(
-    "12," +
-      plusOrMinus +
-      pathNumber +
-      " 97.9,0 183.8,0  269.7,0  355.6,0  441.5,0"
-  );
 }
 
-randomlyGeneratedTemps();
-
-// math.abs https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs
-// change css variable: https://css-tricks.com/updating-a-css-variable-with-javascript/
+Page();
