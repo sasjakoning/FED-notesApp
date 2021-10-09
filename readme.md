@@ -69,8 +69,8 @@ Ik had een animatie gemaakt met Lottie.js en een aantal iconen random laten bewe
 
 **Screenshots van website:**
 
-!(images/voortgang1-1.jpg)
-!(images/voortgang1-2.jpg)
+![-screenshots-](images/voortgang1-1.jpg)
+![-screenshots-](images/voortgang1-2.jpg)
 
 
 
