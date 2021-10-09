@@ -67,6 +67,11 @@ Voor de eerste feedback ronde had ik al een groot deel van mijn eerste webpagina
 Wat nog miste waren een aantal iconen die ik in illustrator zou maken en wat positie dingetjes die beter konden. Ik was ook al bezig geweest met javascript.
 Ik had een animatie gemaakt met Lottie.js en een aantal iconen random laten bewegen per page refresh.
 
+**Screenshots van website:**
+
+!(images/voortgang1-1.jpg)
+!(images/voortgang1-2.jpg)
+
 
 
 
