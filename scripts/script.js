@@ -168,7 +168,6 @@ function Page() {
       }
     });
 
-
     // random weather icons
     const weatherIcons = document.querySelectorAll("td > img");
 
@@ -188,13 +187,10 @@ function Page() {
     });
     // Bron random img src: https://www.peachpit.com/articles/article.aspx?p=2239154&seqNum=10
 
-
     // random wind direction
-    const rotation = document.querySelectorAll(
-      "tr > td > div > img"
-    );
+    const rotation = document.querySelectorAll("tr > td > div > img");
 
-    console.log(rotation)
+    console.log(rotation);
 
     rotation.forEach((element) => {
       element.style.setProperty(
@@ -202,9 +198,6 @@ function Page() {
         Math.floor(Math.random() * 360) + "deg"
       );
     });
-
-
-
   } else {
     // sunrise/down animation
 
@@ -250,7 +243,22 @@ function Page() {
     });
 
     // random numbers: https://css-tricks.com/random-numbers-css/
+
+
+    // hide nav on scroll
+    let lastScrollTop;
+    navbar = document.querySelector("nav");
+    window.addEventListener("scroll", function () {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        navbar.classList.add("navAnim")
+      } else {
+        navbar.classList.remove("navAnim")
+      }
+      lastScrollTop = scrollTop;
+    });
   }
+  // https://dev.to/areeburrub/hide-navbar-as-scroll-down-in-less-than-10-lines-of-javascript-1i00
 }
 
 Page();

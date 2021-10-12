@@ -59,7 +59,10 @@ Deze feedback heb ik in de week na het eindgesprek verwerkt.
 
 **Screenshot(s):**
 
--screenshot(s) van je eindresultaat-
+![-screenshots-](images/eind-1.jpg)
+![-screenshots-](images/eind-2.jpg)
+![-screenshots-](images/eind-3.jpg)
+![-screenshots-](images/eind-4.jpg)
 
 
 
@@ -97,3 +100,10 @@ Ik had een animatie gemaakt met Lottie.js en een aantal iconen random laten bewe
 
 
 ## Bronnen
+
+- Bron clouds effect: https://css-tricks.com/drawing-realistic-clouds-with-svg-and-css/
+- Aangepaste bron van code over ophalen dagen: http://jsfiddle.net/JamesHill/FMadf/
+- Bron random img src: https://www.peachpit.com/articles/article.aspx?p=2239154&seqNum=10
+- Ophalen datum, dag etc: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- Random numbers: https://css-tricks.com/random-numbers-css/
+- Hide nav on scroll: https://dev.to/areeburrub/hide-navbar-as-scroll-down-in-less-than-10-lines-of-javascript-1i00

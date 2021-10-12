@@ -89,13 +89,22 @@ main {
 
 /* header , navigation */
 
+
 header > nav {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
 
   z-index: 100;
+  transition: top .5s ease-in-out;
 }
+
+/* animation of navabar on scroll */
+.navAnim {
+  top: -5em;
+  transition: .5s ease-in-out;
+}
+
 
 header > nav > ul {
   display: flex;
