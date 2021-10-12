@@ -108,7 +108,7 @@ function Page() {
 
     // stukje code om de current day van de gebruiker op te halen en die + vorige en volgende dagen in de html neer te zetten
     function DayAsString(dayIndex) {
-      var weekdays = new Array(7);
+      const weekdays = new Array(7);
       weekdays[0] = "Sun";
       weekdays[1] = "Mon";
       weekdays[2] = "Tue";
@@ -120,8 +120,8 @@ function Page() {
       return weekdays[dayIndex];
     }
 
-    var startDate = new Date();
-    var aryDates = GetDates(startDate, 7);
+    const startDate = new Date();
+    const aryDates = GetDates(startDate, 7);
 
     function GetDates(startDate, daysToAdd) {
       let aryDates = [];
