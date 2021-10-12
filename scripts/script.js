@@ -4,7 +4,8 @@ function Page() {
   if (document.querySelector("body").classList.contains("forecast__page")) {
     // Forecast page dynamic temperatures
 
-    const tempGroup1 = document.querySelectorAll("#temps-group1 > g");
+    const tempGroup1 = document.querySelectorAll(".temps-group1 > g");
+
 
     let pathNumber1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -14,7 +15,7 @@ function Page() {
       groupNumber = index + 1;
 
       let tempText = document.querySelector(
-        "#temps-group1 > g > " + "#group-" + groupNumber + "-temp"
+        ".temps-group1 > g > " + ".group-" + groupNumber + "-temp"
       );
 
       console.log(tempText, index);
@@ -55,7 +56,7 @@ function Page() {
         pathNumber1[5]
     );
 
-    const tempGroup2 = document.querySelectorAll("#temps-group2 > g");
+    const tempGroup2 = document.querySelectorAll(".temps-group2 > g");
 
     let pathNumber2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -65,11 +66,13 @@ function Page() {
       groupNumber = index + 1;
 
       let tempText = document.querySelector(
-        "#temps-group2 > g > " + "#group-" + groupNumber + "-temp"
+        ".temps-group2 > g > " + ".group-" + groupNumber + "-temp"
       );
 
       if (randomTemperature < 33) {
         group.style.setProperty("--translateY", "-" + number + "px");
+
+        console.log(group)
 
         tempText.textContent = randomTemperature + "°";
 

@@ -649,7 +649,7 @@ footer > a::before {
   margin-left: 1.5em;
 }
 
-#temps-group {
+.temps-group {
   transform: translateY(50px);
 }
 
@@ -664,7 +664,7 @@ footer > a::before {
 .st4{fill:#C8C6C6;}
 
 
-#group_1, #group_2, #group_3, #group_4, #group_5, #group_6 {
+.group_1, .group_2, .group_3, .group_4, .group_5, .group_6 {
   --translateY: 10px;
 
   transform: translateY(var(--translateY));
