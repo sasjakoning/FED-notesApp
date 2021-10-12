@@ -1,19 +1,6 @@
 # Procesverslag
 **Auteur:** Sasja Koning
 
-Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). Nb. de standaardstructuur en de spartaanse opmaak zijn helemaal prima. Het gaat om de inhoud van je procesverslag. Besteedt de tijd voor pracht en praal aan je website.
-
-
-
-## Bronnenlijst
-
-Al mijn gebruikte bronnen staan direct in de code.
-
-1. -bron 1-
-2. -bron 2-
-3. -...-
-
-
 
 ## Intake (week 1)
 
@@ -32,6 +19,37 @@ Al mijn gebruikte bronnen staan direct in de code.
 ![-voorlopige breakdownschets(en) van een of beide pagina's van de site die je gaat maken-](images/breakdown-sketches.png)
 
 
+## Voortgang 1 (week 3)
+
+
+Voor de eerste feedback ronde had ik al een groot deel van mijn eerste webpagina af. Ik had alle html geschreven en een boel dingen al in css gedaan.
+Wat nog miste waren een aantal iconen die ik in illustrator zou maken en wat positie dingetjes die beter konden. Ik was ook al bezig geweest met javascript.
+Ik had een animatie gemaakt met Lottie.js en een aantal iconen random laten bewegen per page refresh.
+
+**Screenshots van website:**
+
+![-screenshots-](images/voortgang1-1.jpg)
+![-screenshots-](images/voortgang1-2.jpg)
+
+
+
+## Voortgang 2 (week 5)
+
+Bij deze feedback ronde heeft een student assistent gekeken naar mijn code. Hierop vertelde hij mij dat ik wat meer moest gaat letten op mijn class gebruik.
+
+Wat ik zelf graag nog wou verbeteren was de css en javascript. vooral de css was rommelig geschreven en ik had geen css reset gebruikt waardoor ik vaak moest spelen met margins en padding.
+Met javascript wilde ik graag aan de slag met de tweede pagina waar ik verschillende temperaturen dynamisch zou genereren. Van Robert had ik de tip gekregen om dit met svg's te doen. Werken met svg code is best complex dus ik had er wel af en toe wat moeite mee. Achteraf zou het resultaat wel super tof zijn.
+
+![-screenshots-](images/svg-image.jpg)
+
+
+## Voortgang 3 (week 6)
+
+Ook deze feedback ronde was met een student assistent. Hij wees mij erop om nog wat meer te letten op het opruimen van mijn code en het wegwerken van errors. Op dit moment had ik nog niet de code voor de tweede pagina af. 
+
+Met hulp van Robert, mede-studenten en mijn broer heb ik een deel van de javascript succesvol kunnen schrijven. Het lukte mij om één van de temperaturen random aan te passen. Nu moest er voor zorgen dat dit voor alle temperaturen zou werken. Dit kon nog complex worden met switches en forEach.
+
+![-screenshots-](images/voortgang-2-1.jpg)
 
 
 
@@ -66,39 +84,6 @@ Deze feedback heb ik in de week na het eindgesprek verwerkt.
 
 
 
-## Voortgang 3 (week 6)
-
-Ook deze feedback ronde was met een student assistent. Hij wees mij erop om nog wat meer te letten op het opruimen van mijn code en het wegwerken van errors. Op dit moment had ik nog niet de code voor de tweede pagina af. 
-
-Met hulp van Robert, mede-studenten en mijn broer heb ik een deel van de javascript succesvol kunnen schrijven. Het lukte mij om één van de temperaturen random aan te passen. Nu moest er voor zorgen dat dit voor alle temperaturen zou werken. Dit kon nog complex worden met switches en forEach.
-
-![-screenshots-](images/voortgang-2-1.jpg)
-
-
-## Voortgang 2 (week 5)
-
-Bij deze feedback ronde heeft een student assistent gekeken naar mijn code. Hierop vertelde hij mij dat ik wat meer moest gaat letten op mijn class gebruik.
-
-Wat ik zelf graag nog wou verbeteren was de css en javascript. vooral de css was rommelig geschreven en ik had geen css reset gebruikt waardoor ik vaak moest spelen met margins en padding.
-Met javascript wilde ik graag aan de slag met de tweede pagina waar ik verschillende temperaturen dynamisch zou genereren. Van Robert had ik de tip gekregen om dit met svg's te doen. Werken met svg code is best complex dus ik had er wel af en toe wat moeite mee. Achteraf zou het resultaat wel super tof zijn.
-
-![-screenshots-](images/svg-image.jpg)
-
-
-## Voortgang 1 (week 3)
-
-
-Voor de eerste feedback ronde had ik al een groot deel van mijn eerste webpagina af. Ik had alle html geschreven en een boel dingen al in css gedaan.
-Wat nog miste waren een aantal iconen die ik in illustrator zou maken en wat positie dingetjes die beter konden. Ik was ook al bezig geweest met javascript.
-Ik had een animatie gemaakt met Lottie.js en een aantal iconen random laten bewegen per page refresh.
-
-**Screenshots van website:**
-
-![-screenshots-](images/voortgang1-1.jpg)
-![-screenshots-](images/voortgang1-2.jpg)
-
-
-
 ## Bronnen
 
 - Bron clouds effect: https://css-tricks.com/drawing-realistic-clouds-with-svg-and-css/
@@ -107,3 +92,5 @@ Ik had een animatie gemaakt met Lottie.js en een aantal iconen random laten bewe
 - Ophalen datum, dag etc: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 - Random numbers: https://css-tricks.com/random-numbers-css/
 - Hide nav on scroll: https://dev.to/areeburrub/hide-navbar-as-scroll-down-in-less-than-10-lines-of-javascript-1i00
+- Css reset: http://meyerweb.com/eric/tools/css/reset/ 
+- Flexbox items per row: https://www.codegrepper.com/code-examples/html/flexbox+limit+items+per+row
