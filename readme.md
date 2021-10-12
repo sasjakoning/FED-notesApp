@@ -49,7 +49,7 @@ Ook deze feedback ronde was met een student assistent. Hij wees mij erop om nog 
 
 Met hulp van Robert, mede-studenten en mijn broer heb ik een deel van de javascript succesvol kunnen schrijven. Het lukte mij om één van de temperaturen random aan te passen. Nu moest er voor zorgen dat dit voor alle temperaturen zou werken. Dit kon nog complex worden met switches en forEach.
 
-![-screenshots-](images/voortgang-2-1.jpg)
+![-screenshots-](images/voortgang2-1.jpg)
 
 
 
