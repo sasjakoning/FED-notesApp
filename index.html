@@ -49,17 +49,17 @@
 			<svg width="0" height="0">
 				<filter id="filter-back">
 					<feTurbulence type="fractalNoise" baseFrequency="0.003" numOctaves="10" seed="300" />
-					<feDisplacementMap in="SourceGraphic" scale="459" />
+					<feDisplacementMap in2="turbulence" in="SourceGraphic" scale="459" />
 				</filter>
 	
 				<filter id="filter-mid">
 					<feTurbulence type="fractalNoise" baseFrequency="0.003" numOctaves="5" seed="300" />
-					<feDisplacementMap in="SourceGraphic" scale="400" />
+					<feDisplacementMap in2="turbulence" in="SourceGraphic" scale="400" />
 				</filter>
 	
 				<filter id="filter-front">
 					<feTurbulence type="fractalNoise" baseFrequency="0.003" numOctaves="2" seed="300" />
-					<feDisplacementMap in="SourceGraphic" scale="400" />
+					<feDisplacementMap in2="turbulence" in="SourceGraphic" scale="400" />
 				</filter>
 			</svg>
 			<!-- bron clouds effect: https://css-tricks.com/drawing-realistic-clouds-with-svg-and-css/ -->
@@ -210,8 +210,7 @@
 					</li>
 				</ul>
 			</article>
-
-			</article>
+		</section>
 
 	</main>
 
